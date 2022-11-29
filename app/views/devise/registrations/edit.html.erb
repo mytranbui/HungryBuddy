@@ -21,6 +21,30 @@
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
+
+    <%= f.input :diet,
+                hint: "Are you currently on any Diet?",
+                required: true,
+                input_html: { autocomplete: "My Diet" } %>
+
+    <%= f.input :nickname,
+                hint: "Your Nickname",
+                required: false,
+                input_html: { autocomplete: "Nickname" } %>
+    <%= f.input :likes,
+                hint: "The foods these you like most",
+                required: false,
+                input_html: { autocomplete: "Your likes" } %>
+    <%= f.input :dislikes,
+                hint: "The foods these you do not like",
+                required: false,
+                input_html: { autocomplete: "Your dislikes" } %>
+    <%= f.input :alergies,
+                hint: "If you have allergies for any particular food",
+                required: false,
+                input_html: { autocomplete: "Allergies" } %>
+
+
   </div>
 
   <div class="form-actions">
