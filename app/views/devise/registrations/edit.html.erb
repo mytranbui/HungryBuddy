@@ -14,32 +14,37 @@
                 hint: "leave it blank if you don't want to change it",
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
+
     <%= f.input :password_confirmation,
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
+
     <%= f.input :current_password,
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
 
-    <%= f.input :diet,
-                hint: "Are you currently on any Diet?",
-                required: true,
-                input_html: { autocomplete: "My Diet" } %>
-
     <%= f.input :nickname,
                 hint: "Your Nickname",
                 required: false,
                 input_html: { autocomplete: "Nickname" } %>
+
+    <%= f.input :diet,
+                hint: "Are you currently on any Diet?",
+                required: false,
+                input_html: { autocomplete: "My Diet" } %>
+
     <%= f.input :likes,
                 hint: "The foods these you like most",
                 required: false,
                 input_html: { autocomplete: "Your likes" } %>
+
     <%= f.input :dislikes,
                 hint: "The foods these you do not like",
                 required: false,
                 input_html: { autocomplete: "Your dislikes" } %>
-    <%= f.input :alergies,
+
+    <%= f.input :allergies,
                 hint: "If you have allergies for any particular food",
                 required: false,
                 input_html: { autocomplete: "Allergies" } %>
