@@ -10,9 +10,54 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_28_163812) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_29_114719) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookmarks", force: :cascade do |t|
+    t.bigint "list_id", null: false
+    t.bigint "foodplace_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["foodplace_id"], name: "index_bookmarks_on_foodplace_id"
+    t.index ["list_id"], name: "index_bookmarks_on_list_id"
+  end
+
+  create_table "foodplaces", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "phone_number"
+    t.string "type"
+    t.string "cuisine"
+    t.string "website"
+    t.float "google_rating"
+    t.date "opening_times"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lists", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_lists_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "foodplace_id", null: false
+    t.text "comment"
+    t.string "highlight"
+    t.float "rating"
+    t.date "date"
+    t.float "cleanliness"
+    t.float "service"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["foodplace_id"], name: "index_reviews_on_foodplace_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,4 +71,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_28_163812) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookmarks", "foodplaces"
+  add_foreign_key "bookmarks", "lists"
+  add_foreign_key "lists", "users"
+  add_foreign_key "reviews", "foodplaces"
+  add_foreign_key "reviews", "users"
 end
