@@ -1,0 +1,67 @@
+<div class="container">
+  <!--add images -->
+  <div>
+    <%= @foodplace.name %>
+    <%= @foodplace.cuisine %>
+    <%= @foodplace.google_rating %>
+    <%= @foodplace.opening_times %>
+  </div>
+  <div>
+    <!--delivery button -->
+    <%= @foodplace.phone_number %>
+    <%= @foodplace.website %>
+  </div>
+  <div>
+    <%= @foodplace.address%>
+    <!--add map -->
+  </div>
+</div>
+
+
+ <div>
+  <!--add reviews -->
+ </div>
+<!-- <div class="container mt-5">
+
+  <%= link_to "Back", grandparents_path, :class => "btn clickbutton" %>
+  <br>
+    <div class="polaroid">
+      <a href="#">
+      <% if @grandparent.photo.attached?%>
+        <%= cl_image_tag @grandparent.photo.key, height: 250, width: 250, crop: :fill %>
+      <% else %>
+        <img src="https://imgflip.com/s/meme/Grandma-Finds-The-Internet.jpg" />
+      <% end %>
+      </a>
+    </div>
+    <h2><%= @grandparent.name %></h2>
+    <p><%= @grandparent.age %> years old</p>
+    <p><%= @grandparent.address %> </p>
+    <br>
+    <p><%= @grandparent.description %> </p>
+
+  <% if @grandparent.user != current_user %>
+  <p><%= "Do you want to book #{@grandparent.name}?" %> </p>
+  <br>
+  <%= link_to " Book", new_grandparent_booking_path(@grandparent), :class => "btn clickbutton fas fa-heart"%>
+  <% end %>
+  <br>
+  <br>
+  <% if @grandparent.user == current_user %>
+  <%= link_to "Edit", edit_grandparent_path, :class => "btn clickbutton" %>
+  <%= link_to "Delete", grandparent_path(@grandparent),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn clickbutton" %>
+  <% end %>
+</div> -->
+
+  <div class="card-title">
+    <div class="card mb-4">
+      <p><%= @foodplace.address %></p>
+      <p><%= @foodplace.phone_number %></p>
+      <p><%= @foodplace.type %></p>
+      <p><%= @foodplace.cuisine %></p>
+      <p><%= @foodplace.website %></p>
+      <p><%= @foodplace.google_rating %></p>
+      <p><%= @foodplace.opening_times %></p>
+    </div>
+  </div>
+</div>

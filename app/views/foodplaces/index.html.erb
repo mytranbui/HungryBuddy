@@ -1,13 +1,28 @@
-<h1>Lists of FoodPlaces</h1>
-<ul>
-  <% @foodplaces.each do |foodplace| %>
-    <li><%= foodplace.name %></li>
-    <li><%= foodplace.address %></li>
-    <li><%= foodplace.phone_number %></li>
-    <li><%= foodplace.type %></li>
-    <li><%= foodplace.cuisine %></li>
-    <li><%= foodplace.website %></li>
-    <li><%= foodplace.google_rating %></li>
-    <li><%= foodplace.opening_times %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <h1>Lists of FoodPlaces</h1>
+  <div class="cards">
+    <% @foodplaces.each do |foodplace| %>
+        <div class="card mb-4">
+        <%= link_to foodplace_path(foodplace) do %>
+          <div class="container">
+            <div class="card-title">
+              <p>Name: <span><%= foodplace.name %></span></p>
+            </div>
+            <p><%= foodplace.address %></p>
+            <p><%= foodplace.phone_number %></p>
+            <p><%= foodplace.category %></p>
+            <p><%= foodplace.cuisine %></p>
+            <p><%= foodplace.website %></p>
+            <p><%= foodplace.google_rating %></p>
+            <p><%= foodplace.opening_times %></p>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    <div style="width: 100%; height: 600px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+</div>
