@@ -1,6 +1,6 @@
 class FoodplacesController < ApplicationController
   before_action :set_foodplace, only: %i[show]
-  
+
   def index
     @foodplaces = Foodplace.all
   end

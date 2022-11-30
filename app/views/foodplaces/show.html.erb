@@ -52,3 +52,16 @@
   <%= link_to "Delete", grandparent_path(@grandparent),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn clickbutton" %>
   <% end %>
 </div> -->
+
+  <div class="card-title">
+    <div class="card mb-4">
+      <p><%= @foodplace.address %></p>
+      <p><%= @foodplace.phone_number %></p>
+      <p><%= @foodplace.type %></p>
+      <p><%= @foodplace.cuisine %></p>
+      <p><%= @foodplace.website %></p>
+      <p><%= @foodplace.google_rating %></p>
+      <p><%= @foodplace.opening_times %></p>
+    </div>
+  </div>
+</div>
