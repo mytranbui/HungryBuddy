@@ -2,7 +2,10 @@ class FoodplacesController < ApplicationController
   before_action :set_foodplace, only: %i[show]
 
   def index
-    @foodplaces = Foodplace.all
+    if params[:query].present?
+      @foodplaces = Foodplace.where("name ILIKE ?", "%#{params[:query]}%")
+    else
+      @foodplaces = Foodplace.all
     @markers = @foodplaces.geocoded.map do |foodplace|
       {
         lat: foodplace.latitude,
