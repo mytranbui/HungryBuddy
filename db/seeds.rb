@@ -8,6 +8,11 @@
 
 require "faker"
 
+User.destroy_all
+Foodplace.destroy_all
+
+User.create(email: "test@gmail.com", password: "123456")
+
 10.times do
   Foodplace.create(name: Faker::Restaurant.name, address: Faker::Address.street_address, cuisine: Faker::Food.ethnic_category)
 end
