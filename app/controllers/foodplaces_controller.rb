@@ -1,5 +1,5 @@
 class FoodplacesController < ApplicationController
-  before_action :foodplace_params, only: %(show)
+  before_action :set_foodplace, only: %(show)
   def index
     @foodplaces = Foodplace.all
   end
@@ -9,7 +9,10 @@ class FoodplacesController < ApplicationController
 
   private
 
-  def foodplace_params
+  def set_foodplace
     @foodplace = Foodplace.find(params[:id])
+  end
+
+  def foodplace_params
   end
 end
