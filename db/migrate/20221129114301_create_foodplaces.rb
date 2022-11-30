@@ -4,7 +4,7 @@ class CreateFoodplaces < ActiveRecord::Migration[7.0]
       t.string :name
       t.string :address
       t.string :phone_number
-      t.string :type
+      t.string :category
       t.string :cuisine
       t.string :website
       t.float :google_rating
