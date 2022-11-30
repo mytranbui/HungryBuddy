@@ -10,7 +10,7 @@
             </div>
             <p><%= foodplace.address %></p>
             <p><%= foodplace.phone_number %></p>
-            <p><%= foodplace.type %></p>
+            <p><%= foodplace.category %></p>
             <p><%= foodplace.cuisine %></p>
             <p><%= foodplace.website %></p>
             <p><%= foodplace.google_rating %></p>
@@ -19,5 +19,10 @@
         <% end %>
       </div>
     <% end %>
+    <div style="width: 100%; height: 600px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
 </div>
