@@ -1,0 +1,13 @@
+<h1>Lists of FoodPlaces</h1>
+<ul>
+  <% @foodplaces.each do |foodplace| %>
+    <li><%= foodplace.name %></li>
+    <li><%= foodplace.address %></li>
+    <li><%= foodplace.phone_number %></li>
+    <li><%= foodplace.type %></li>
+    <li><%= foodplace.cuisine %></li>
+    <li><%= foodplace.website %></li>
+    <li><%= foodplace.google_rating %></li>
+    <li><%= foodplace.opening_times %></li>
+  <% end %>
+</ul>
