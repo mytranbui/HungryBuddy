@@ -55,7 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_141902) do
     t.string "name"
     t.string "address"
     t.string "phone_number"
-    t.string "type"
+    t.string "category"
     t.string "cuisine"
     t.string "website"
     t.float "google_rating"
