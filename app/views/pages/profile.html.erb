@@ -1,0 +1,26 @@
+<div class = "card">
+  <h1>My Profile</h1>
+  <div>
+    <p>First name: <%= @user.first_name %></p>
+    <p>Last name: <%= @user.last_name %></p>
+    <p>Email-address: <%= @user.email %></p>
+  </div>
+
+  <div>
+    <p>Nickname: <%= @user.nickname %></p>
+    <p>Diet: <%= @user.diet %></p>
+    <p>Likes:<%= @user.likes %></p>
+    <p>Dislikes: <%= @user.dislikes %></p>
+    <p>Allergie: <%= @user.allergies %></p>
+    <p>Bio: <%= @user.bio %></p>
+  </div>
+
+</div>
+
+<div>
+  <h1>My </h1>
+</div>
+<%= @user.lists %>
+
+<% if current_user %>
+<% end %>

@@ -23,6 +23,11 @@ body {
   margin-top: 30px;
 }
 
+.overlay-content > a {
+  font-size: 32px !important;
+  padding: 14px 10px !important;
+}
+
 .overlay a {
   padding: 8px;
   text-decoration: none;
@@ -53,7 +58,7 @@ body {
 }
 
 .logo{
-  position: fixed;
-  right: 0;
-  top: 1em;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
 }
