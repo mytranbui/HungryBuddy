@@ -1,26 +1,32 @@
-<div class = "card">
-  <h1>My Profile</h1>
+<div class = "container mt-5">
   <div>
-    <p>First name: <%= @user.first_name %></p>
-    <p>Last name: <%= @user.last_name %></p>
-    <p>Email-address: <%= @user.email %></p>
+    <div class="d-flex flex-column  justify-content-center ">
+      <img src="https://imgflip.com/s/meme/Grandma-Finds-The-Internet.jpg" class="profile_pic"/>
+      <p><%= @user.first_name %><%= @user.last_name %></p>
+    </div>
+    <div class = "container mt-2">
+      <div  class="card-wrap">
+        <p>First name: <%= @user.first_name %></p>
+        <p>Last name: <%= @user.last_name %></p>
+        <p>Email-address: <%= @user.email %></p>
+      </div>
+    </div>
+
   </div>
 
-  <div>
-    <p>Nickname: <%= @user.nickname %></p>
-    <p>Diet: <%= @user.diet %></p>
-    <p>Likes:<%= @user.likes %></p>
-    <p>Dislikes: <%= @user.dislikes %></p>
-    <p>Allergie: <%= @user.allergies %></p>
-    <p>Bio: <%= @user.bio %></p>
+  <div class = "container mt-2">
+    <div class="card-wrap">
+      <p>Nickname: <%= @user.nickname %></p>
+      <p>Diet: <%= @user.diet %></p>
+      <p>Likes:<%= @user.likes %></p>
+      <p>Dislikes: <%= @user.dislikes %></p>
+      <p>Allergie: <%= @user.allergies %></p>
+      <p>Bio: <%= @user.bio %></p>
+    </div>
   </div>
 
 </div>
 
 <div>
-  <h1>My </h1>
+  <h1>My Lists</h1>
 </div>
-<%= @user.lists %>
-
-<% if current_user %>
-<% end %>
