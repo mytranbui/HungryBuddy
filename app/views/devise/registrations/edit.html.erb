@@ -28,6 +28,8 @@
                 hint: "Your Nickname",
                 required: false,
                 input_html: { autocomplete: "Nickname" } %>
+                
+    <%= f.input :photo, as: :file %>
 
     <%= f.input :diet,
                 hint: "Are you currently on any Diet?",
