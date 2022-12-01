@@ -5,6 +5,11 @@
         <div class="card mb-4">
         <%= link_to foodplace_path(foodplace) do %>
           <div class="container">
+            <% if foodplace.photo.present? %>
+              <%= cl_image_tag foodplace.photo.key, :width => 150, :height => 150, crop: :fill %>
+            <% else %>
+              <img src="https://imgflip.com/s/meme/Grandma-Finds-The-Internet.jpg" />
+            <% end %>
             <div class="card-title">
               <p>Name: <span><%= foodplace.name %></span></p>
             </div>

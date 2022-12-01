@@ -26,7 +26,7 @@ class FoodplacesController < ApplicationController
   end
 
   def foodplace_params
-    params.require(:foodplace).permit(:name, :address, :phone_number, :category, :cuisine, :website, :google_rating, :opening_times)
+    params.require(:foodplace).permit(:name, :address, :phone_number, :category, :cuisine, :website, :google_rating, :opening_times, :photo)
     # when attaching a photo to foodplace
     # params.require(:foodplace).permit(:name, :photo)
   end
