@@ -1,0 +1,27 @@
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fa-solid fa-house fa-xl"></i></a>
+    <a href="#"><i class="fa-solid fa-rss fa-xl"></i></a>
+    <a href="#"><i class="fa-solid fa-map  fa-xl"></i></a>
+    <a href="#"><i class="fa-solid fa-pen fa-xl"></i></a>
+    <div id="myNav" class="overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="overlay-content">
+        <a href="#">My profile</a>
+        <a href="#">My List</a>
+        <a href="#">My Friends</a>
+        <a href="#">Logout</a>
+      </div>
+    </div>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    <script>
+      function openNav() {
+        document.getElementById("myNav").style.width = "100%";
+      }
+
+      function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+      }
+    </script>
+  </div>
+</div>
