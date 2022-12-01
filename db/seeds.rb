@@ -3,19 +3,82 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+require "open-uri"
 
-require "faker"
-
+puts "Destroying all seeds..."
 User.destroy_all
 Foodplace.destroy_all
+# Friendship.destroy_all
 
-User.create(email: "test@gmail.com", password: "123456")
-
+categories = ["restaurant", "bar", "cafe"]
+puts 'Creating foodplaces...'
+#User.create(email: "test@gmail.com", password: "123456")
 10.times do
-  Foodplace.create(name: Faker::Restaurant.name, address: Faker::Address.street_address, cuisine: Faker::Food.ethnic_category)
+  Foodplace.create(name: Faker::Restaurant.name, address: Faker::Address.full_address, cuisine: Faker::Food.ethnic_category, \
+  phone_number: Faker::PhoneNumber.phone_number_with_country_code , category: categories.sample, website: Faker::Internet.url  , google_rating: rand(1..5), opening_times:"8:00 - 18:00")
 end
+
+puts 'Creating users...'
+users = [
+  {
+    first_name: "Salome",
+    last_name: "Abramishvili",
+    nickname: "Salome",
+    email: "salome@abramishvili.com",
+    password: "123456"
+  },
+  {
+    first_name: "My Tran",
+    last_name: "Bui",
+    nickname: "My",
+    email: "mytran@bui.com",
+    password: "123456"
+  },
+  {
+    first_name: "Alexandr",
+    last_name: "Iampolskaia",
+    nickname: "Alex",
+    email: "alexandr@iampolskaia.com",
+    password: "123456"
+  },
+  {
+    first_name: "Bishwajit",
+    last_name: "Karmaker",
+    nickname: "abdullah",
+    email: "bishwajit@karmaker.com",
+    password: "123456"
+  }
+]
+
+users.each do |user|
+  # file = URI.open(user[:photo_url])
+  user = User.create(
+    first_name: user[:first_name],
+    last_name: user[:last_name],
+    nickname: user[:nickname],
+    email: user[:email],
+    password: "123456",
+  )
+  # user.photo.attach(io: file, filename: "#{user.first_name}.png", content_type: 'image/png')
+  user.save
+end
+
+puts 'Finished with the users!'
+
+puts 'Creating one friendship and one chatroom'
+alex = User.find_by(first_name: "Alexandr")
+salome = User.find_by(first_name: "Salome")
+my = User.find_by(first_name: "My Tran")
+abdullah = User.find_by(first_name: "Bishwajit")
+# friendship_one = Friendship.create(user_one: alex, user_two: salome, status: "accepted")
+# friendship_two = Friendship.create(user_one: alex, user_two: my, status: "accepted")
+# Chatroom.create(friendship: friendship_one)
+# Chatroom.create(friendship: friendship_two)
+
+puts "Seed finished"
 # require "faker"
 # require "open-uri"
 
