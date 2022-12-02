@@ -1,4 +1,21 @@
-<h1>USERS</h1>
-<% @users.each do |user| %>
-  <%= user.nickname %>
-<% end %>
+<div class="container mt-5">
+  <%= form_with url: users_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "search for a user"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+  <h1>USERS</h1>
+  <% @users.each do |user| %>
+    <%= link_to profile_path(user) do %>
+      <div class="new-card">
+        <%= user.nickname %>
+        <div class="avatar-large">
+        <%= cl_image_tag user.photo.key if user.photo.attached? %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

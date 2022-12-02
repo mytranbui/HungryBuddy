@@ -19,7 +19,7 @@
       <% end %>
     </div>
     <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-      <%= form_with url: foodplaces_path, method: :get, class: "d-flex" do %>
+      <%= form_with url: users_path, method: :get, class: "d-flex" do %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",

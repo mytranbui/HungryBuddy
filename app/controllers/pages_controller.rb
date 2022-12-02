@@ -11,5 +11,11 @@ class PagesController < ApplicationController
 
   def users
     @users = User.where.not(id: current_user.id)
+    # @user = User.find(params[:id])
+    if params[:query].present?
+      @users = User.where("nickname ILIKE ?", "%#{params[:query]}%")
+    else
+      @users = User.all
+    end
   end
 end

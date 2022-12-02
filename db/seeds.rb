@@ -13,7 +13,6 @@ User.destroy_all
 Foodplace.destroy_all
 # Friendship.destroy_all
 
-
 categories = ["restaurant", "bar", "cafe"]
 puts 'Creating foodplaces...'
 # User.create(email: "test@gmail.com", password: "123456")
@@ -62,16 +61,16 @@ users = [
   }
 ]
 
-users.each do |user|
-  # file = URI.open(user[:photo_url])
+users.each do |user_hash|
   user = User.create(
-    first_name: user[:first_name],
-    last_name: user[:last_name],
-    nickname: user[:nickname],
-    email: user[:email],
-    password: "123456",
+    first_name: user_hash[:first_name],
+    last_name: user_hash[:last_name],
+    nickname: user_hash[:nickname],
+    email: user_hash[:email],
+    password: "123456"
   )
-  # user.photo.attach(io: file, filename: "#{user.first_name}.png", content_type: 'image/png')
+  file = URI.open(user_hash[:photo_url])
+  user.photo.attach(io: file, filename: "#{user.first_name}.png", content_type: 'image/png')
   user.save
 end
 
