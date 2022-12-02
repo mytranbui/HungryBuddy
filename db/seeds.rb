@@ -30,9 +30,10 @@ users = [
   {
     first_name: "Salome",
     last_name: "Abramishvili",
-    nickname: "Salome",
+    nickname: "Sally",
     email: "salome@abramishvili.com",
-    password: "123456"
+    password: "123456",
+    photo_url: "https://avatars.githubusercontent.com/u/104451026?v=4"
   },
   {
     first_name: "My Tran",
@@ -76,7 +77,7 @@ puts 'Creating one friendship and one chatroom'
 alex = User.find_by(first_name: "Alexandr")
 salome = User.find_by(first_name: "Salome")
 my = User.find_by(first_name: "My Tran")
-abdullah = User.find_by(first_name: "Bishwajit")
+bishwajit = User.find_by(first_name: "Bishwajit")
 # friendship_one = Friendship.create(user_one: alex, user_two: salome, status: "accepted")
 # friendship_two = Friendship.create(user_one: alex, user_two: my, status: "accepted")
 # Chatroom.create(friendship: friendship_one)
