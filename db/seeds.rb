@@ -33,7 +33,8 @@ users = [
     last_name: "Abramishvili",
     nickname: "Salome",
     email: "salome@abramishvili.com",
-    password: "123456"
+    password: "123456",
+    photo_url: "https://avatars.githubusercontent.com/u/104451026?v=4"
   },
   {
     first_name: "My Tran",

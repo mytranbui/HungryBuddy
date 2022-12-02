@@ -4,9 +4,6 @@
 
 import { application } from "./application"
 
-import DisplayMapController from "./display_map_controller"
-application.register("display-map", DisplayMapController)
-
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
