@@ -15,7 +15,7 @@
           class: "form-control",
           placeholder: "search for a foodplace"
         %>
-        <%= submit_tag "Search", class: "btn new-btn" %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
     </div>
     <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
@@ -30,3 +30,4 @@
     </div>
   </div>
 </div>
+<%= render "shared/carousel", foodplaces: @top_rated_foodplaces %>

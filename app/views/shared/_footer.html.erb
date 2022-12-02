@@ -1,20 +1,21 @@
 <div class="footer">
   <div class="footer-links">
-    <a href="#"><i class="fa-solid fa-house fa-xl"></i></a>
+    <a href="/foodplaces"><i class="fa-solid fa-house fa-xl"></i></a>
     <a href="#"><i class="fa-solid fa-rss fa-xl"></i></a>
     <a href="#"><i class="fa-solid fa-map  fa-xl"></i></a>
     <a href="#"><i class="fa-solid fa-pen fa-xl"></i></a>
     <div id="myNav" class="overlay">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <div class="overlay-content">
-        <a href="/pages/profile">My profile</a>
-        <a href="#">My List</a>
-        <a href="#">My Friends</a>
         <% if user_signed_in? %>
-          <a href="#">Logout</a>
-          <% else %>
-            <a href="#">Login</a>
+          <a href="/profile/<%= current_user.id %>">My profile</a>
         <% end %>
+        <a href="/lists/1">My Favorites</a>
+        <% if user_signed_in? %>
+          <%= link_to 'Logout',  destroy_user_session_path, data: {turbo_method: :delete} %>
+        <% else %>
+        <a href="/users/sign_in">Login</a>
+      <% end %>
       </div>
     </div>
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>

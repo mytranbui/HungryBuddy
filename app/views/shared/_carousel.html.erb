@@ -1,0 +1,77 @@
+<div class="container mt-5">
+<%= link_to foodplaces_path do%>
+<div class="header flex">
+<h3>Top Berliner Foodplaces According To Google    > </h3>
+<br>
+</div>
+<%end%>
+ <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="10000">
+          <div class="card" style="width: 20rem;">
+          <% foodplaces.each do |foodplace| %>
+            <img src="https://source.unsplash.com/random/?restaurant" class="d-block w-100" alt="...">
+          <div class="card-body">
+            <%= link_to foodplace_path(foodplace) do %>
+             <h2><%= foodplace.name%></h2>
+                <h3> <%= foodplace.address %> </h3>
+                <p> <%= foodplace.google_rating %></p>
+            <% end %>
+         </div>
+         <% end %>
+        </div>
+      </div>
+      <div class="carousel-item active" data-bs-interval="10000">
+          <div class="card" style="width: 20rem;">
+          <% foodplaces.each do |foodplace| %>
+            <img src="https://source.unsplash.com/random/?restaurant" class="d-block w-100" alt="...">
+          <div class="card-body">
+            <%= link_to foodplace_path(foodplace) do %>
+             <h2><%= foodplace.name%></h2>
+                <h3> <%= foodplace.address %> </h3>
+                <p> <%= foodplace.google_rating %></p>
+            <% end %>
+         </div>
+         <% end %>
+        </div>
+      </div>
+      <div class="carousel-item active" data-bs-interval="10000">
+          <div class="card" style="width: 20rem;">
+          <% foodplaces.each do |foodplace| %>
+            <img src="https://source.unsplash.com/random/?restaurant" class="d-block w-100" alt="...">
+          <div class="card-body">
+            <%= link_to foodplace_path(foodplace) do %>
+             <h2><%= foodplace.name%></h2>
+                <h3> <%= foodplace.address %> </h3>
+                <p> <%= foodplace.google_rating %></p>
+            <% end %>
+         </div>
+         <% end %>
+        </div>
+      </div>
+      <div class="carousel-item active" data-bs-interval="10000">
+          <div class="card" style="width: 20rem;">
+          <% foodplaces.each do |foodplace| %>
+            <img src="https://source.unsplash.com/random/?restaurant" class="d-block w-100" alt="...">
+          <div class="card-body">
+            <%= link_to foodplace_path(foodplace) do %>
+             <h2><%= foodplace.name%></h2>
+                <h3> <%= foodplace.address %> </h3>
+                <p> <%= foodplace.google_rating %></p>
+            <% end %>
+         </div>
+         <% end %>
+        </div>
+      </div>
+      </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+      </div>
+    </div>
+</div>
