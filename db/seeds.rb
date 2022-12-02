@@ -40,8 +40,8 @@ users = [
     nickname: "Sally",
     email: "salome@abramishvili.com",
     password: "123456",
-    photo_url: "https://avatars.githubusercontent.com/u/104451026?v=4"
-    diet: "vegan",
+    photo_url: "https://avatars.githubusercontent.com/u/104451026?v=4",
+    diet: "normal",
     likes: "deep fried foods",
     dislikes: "Onion",
     allergies: "None",
