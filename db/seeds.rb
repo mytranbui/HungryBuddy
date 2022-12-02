@@ -41,6 +41,11 @@ users = [
     email: "salome@abramishvili.com",
     password: "123456",
     photo_url: "https://avatars.githubusercontent.com/u/104451026?v=4"
+    diet: "vegan",
+    likes: "deep fried foods",
+    dislikes: "Onion",
+    allergies: "None",
+    bio: "I like to explore new dishes "
   },
   {
     first_name: "My Tran",
@@ -49,6 +54,11 @@ users = [
     email: "mytran@bui.com",
     password: "123456",
     photo_url: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1665338828/rclllxol7uwyh22glkdj.jpg"
+    diet: "normal",
+    likes: "Pastries, ice cream, mushrooms",
+    dislikes: "Cucumber",
+    allergies: "None",
+    bio: "I am not vegetarian but like to try out vegetarian dishes :) "
   },
   {
     first_name: "Alexandr",
@@ -57,6 +67,11 @@ users = [
     email: "alexandr@iampolskaia.com",
     password: "123456",
     photo_url: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1664738022/hde9mngzclpbctqcws8x.jpg"
+    diet: "normal",
+    likes: "Chinese food",
+    dislikes: "Ginger",
+    allergies: "None",
+    bio: "I like to go to the restaurant with friends."
   },
   {
     first_name: "Bishwajit",
@@ -65,6 +80,11 @@ users = [
     email: "bishwajit@karmaker.com",
     password: "123456",
     photo_url: "https://avatars.githubusercontent.com/u/113314565?v=4"
+    diet: "normal",
+    likes: "Spicy food",
+    dislikes: "tomato",
+    allergies: "None",
+    bio: "I like Asian dishes."
   }
 ]
 
