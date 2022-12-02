@@ -1,3 +1,28 @@
+.card {
+  height: 38vh;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-body {
+  margin-bottom: 8px;
+}
+
+.card > img {
+  height: 160px;
+  width: 100%;
+  object-fit: cover;
+}
+
+// .card-text h2 {
+//   font-size: 14px;
+
 .card-wrap {
     display: flex;
     flex-wrap: wrap;
@@ -37,6 +62,25 @@
 //   margin: 0;
 // }
 
+.card-body p {
+  font-size: 1rem;
+  opacity: .7;
+  margin-bottom: 5px;
+}
+
+.card h2{
+  position: inherit;
+  // top: -20px;
+  // width: 40px;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+
+}
+.card h3{
+  font-size: 15px;
+}
+// .card-text{
 // .card-trip p {
 //   font-size: 12px;
 //   opacity: .7;
@@ -51,6 +95,9 @@
 //   position: relative;
 // }
 
+a{
+  text-decoration: none;
+}
 // .card-trip-infos .card-trip-user {
 //   position: absolute;
 //   right: 16px;
