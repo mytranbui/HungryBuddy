@@ -16,14 +16,20 @@ Foodplace.destroy_all
 
 categories = ["restaurant", "bar", "cafe"]
 puts 'Creating foodplaces...'
+
+addresses = ["Huttenstraße 7, 10553 Berlin", "Zinnowitzer Str. 5, 10115 Berlin", "Potsdamer Str. 69, 10785 Berlin", \
+              "Lützowstraße 19, 10785 Berlin", "Potsdamer Str. 84, 10785 Berlin", "Potsdamer Str. 75, 10785 Berlin", \
+              "Potsdamer Str. 85, 10785 Berlin","Potsdamer Str. 99, 10785 Berlin","Potsdamer Str. 73, 10785 Berlin","Eichhornstraße 3, 10785 Berlin"]
+i = 0
 # User.create(email: "test@gmail.com", password: "123456")
 10.times do
-  foodplace = Foodplace.new(name: Faker::Restaurant.name, address: Faker::Address.full_address, cuisine: Faker::Food.ethnic_category, \
+  foodplace = Foodplace.new(name: Faker::Restaurant.name, address: addresses[i], cuisine: Faker::Food.ethnic_category, \
   phone_number: Faker::PhoneNumber.phone_number_with_country_code , category: categories.sample, website: Faker::Internet.url  , google_rating: rand(1..5), opening_times:"8:00 - 18:00")
   query = ["restaurant", "bar", "cafe"].sample
   file = URI.open("https://source.unsplash.com/random/?#{query}")
   foodplace.photo.attach(io: file, filename: "#{foodplace.name}.png", content_type: "image/png")
   foodplace.save
+  i += 1
 end
 
 puts 'Creating users...'
