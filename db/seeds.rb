@@ -57,7 +57,7 @@ users = [
     last_name: "Karmaker",
     nickname: "Abdullah",
     email: "bishwajit@karmaker.com",
-    password: "123456"
+    password: "123456",
     photo_url: "https://avatars.githubusercontent.com/u/113314565?v=4"
   }
 ]
