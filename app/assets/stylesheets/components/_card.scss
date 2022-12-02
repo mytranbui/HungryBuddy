@@ -113,3 +113,14 @@ a{
 //   top: -20px;
 //   width: 40px;
 // }
+.new-card{
+  overflow: hidden;
+  width:30%;
+  height:10vh;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 10px;
+  display: flex;
+  position: relative;
+  border:2px solid #205375;
+  display: inline-block;
+}
