@@ -41,21 +41,24 @@ users = [
     last_name: "Bui",
     nickname: "My",
     email: "mytran@bui.com",
-    password: "123456"
+    password: "123456",
+    photo_url: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1665338828/rclllxol7uwyh22glkdj.jpg"
   },
   {
     first_name: "Alexandr",
     last_name: "Iampolskaia",
     nickname: "Alex",
     email: "alexandr@iampolskaia.com",
-    password: "123456"
+    password: "123456",
+    photo_url: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1664738022/hde9mngzclpbctqcws8x.jpg"
   },
   {
     first_name: "Bishwajit",
     last_name: "Karmaker",
     nickname: "Abdullah",
     email: "bishwajit@karmaker.com",
-    password: "123456"
+    password: "123456",
+    photo_url: "https://avatars.githubusercontent.com/u/113314565?v=4"
   }
 ]
 
