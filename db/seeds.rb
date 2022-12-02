@@ -53,7 +53,7 @@ users = [
     nickname: "My",
     email: "mytran@bui.com",
     password: "123456",
-    photo_url: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1665338828/rclllxol7uwyh22glkdj.jpg"
+    photo_url: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1665338828/rclllxol7uwyh22glkdj.jpg",
     diet: "normal",
     likes: "Pastries, ice cream, mushrooms",
     dislikes: "Cucumber",
@@ -66,7 +66,7 @@ users = [
     nickname: "Alex",
     email: "alexandr@iampolskaia.com",
     password: "123456",
-    photo_url: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1664738022/hde9mngzclpbctqcws8x.jpg"
+    photo_url: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1664738022/hde9mngzclpbctqcws8x.jpg",
     diet: "normal",
     likes: "Chinese food",
     dislikes: "Ginger",
@@ -79,7 +79,7 @@ users = [
     nickname: "Abdullah",
     email: "bishwajit@karmaker.com",
     password: "123456",
-    photo_url: "https://avatars.githubusercontent.com/u/113314565?v=4"
+    photo_url: "https://avatars.githubusercontent.com/u/113314565?v=4",
     diet: "normal",
     likes: "Spicy food",
     dislikes: "tomato",
