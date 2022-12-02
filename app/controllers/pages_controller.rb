@@ -10,7 +10,6 @@ class PagesController < ApplicationController
   end
 
   def users
-    # scope :all_except, ->(user) { where.not(id: user) }
-    # @users = User.all_except(current_user)
+    @users = User.where.not(id: current_user.id)
   end
 end
