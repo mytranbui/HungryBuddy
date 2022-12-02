@@ -1,15 +1,22 @@
-<div class = "card">
-  <h1>My Profile</h1>
-  <div class="card-body">
- <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill if @user.photo.attached? %>
-</div>
-  <div>
+<div class="d-flex flex-column">
+  <div class="d-flex flex-column align-items-center">
+    <% if @user.photo.present? %>
+      <%= cl_image_tag user.photo.key %>
+    <% else %>
+        <img src="https://imgflip.com/s/meme/Grandma-Finds-The-Internet.jpg" class = "profile_pic"/>
+    <% end %>
+    <div class="d-flex justify-content-center">
+      <%= @user.first_name %>
+      <%= @user.last_name %>
+    </div>
+  </div>
+  <div class="d-flex flex-column mx-4 my-2 p-3 border shadow rounded">
     <p>First name: <%= @user.first_name %></p>
     <p>Last name: <%= @user.last_name %></p>
     <p>Email-address: <%= @user.email %></p>
   </div>
 
-  <div>
+  <div class="d-flex flex-column mx-4 my-2 p-3 border shadow rounded">
     <p>Nickname: <%= @user.nickname %></p>
     <p>Diet: <%= @user.diet %></p>
     <p>Likes:<%= @user.likes %></p>
@@ -19,11 +26,3 @@
   </div>
 
 </div>
-
-<div>
-  <h1>My </h1>
-</div>
-<%= @user.lists %>
-
-<% if current_user %>
-<% end %>
