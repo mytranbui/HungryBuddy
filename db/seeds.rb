@@ -16,7 +16,7 @@ Foodplace.destroy_all
 
 categories = ["restaurant", "bar", "cafe"]
 puts 'Creating foodplaces...'
-#User.create(email: "test@gmail.com", password: "123456")
+# User.create(email: "test@gmail.com", password: "123456")
 10.times do
   foodplace = Foodplace.new(name: Faker::Restaurant.name, address: Faker::Address.full_address, cuisine: Faker::Food.ethnic_category, \
   phone_number: Faker::PhoneNumber.phone_number_with_country_code , category: categories.sample, website: Faker::Internet.url  , google_rating: rand(1..5), opening_times:"8:00 - 18:00")
