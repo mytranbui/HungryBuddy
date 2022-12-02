@@ -10,6 +10,15 @@
   position: relative;
 }
 
+.header{
+  display:flex;
+  h3{
+    font-size: 14px;
+    font-weight: bold;
+    color: #F66B0E;
+  }
+
+}
 .card-body {
   margin-bottom: 8px;
 }
