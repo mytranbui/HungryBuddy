@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get "dashboard", to: "pages#dashboard", as: :dashboard
   get "profile/:id", to: "pages#profile"
+  get "users", to: "pages#users"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :foodplaces do
     resources :reviews

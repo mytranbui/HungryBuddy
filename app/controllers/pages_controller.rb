@@ -4,7 +4,13 @@ class PagesController < ApplicationController
   def home
 
   end
+
   def profile
     @user = User.find(params[:id])
+  end
+
+  def users
+    # scope :all_except, ->(user) { where.not(id: user) }
+    # @users = User.all_except(current_user)
   end
 end

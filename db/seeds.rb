@@ -53,7 +53,7 @@ users = [
   {
     first_name: "Bishwajit",
     last_name: "Karmaker",
-    nickname: "abdullah",
+    nickname: "Abdullah",
     email: "bishwajit@karmaker.com",
     password: "123456"
   }
