@@ -1,0 +1,37 @@
+
+
+.footer{
+  color: #0E0000;
+  background: #000000E6;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 16px;
+  text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+}
+
+// styles added to the icon and in the links in the menu
+.footer-links a {
+  text-decoration: none;
+  font-size: 16px;
+  padding: 0px 10px;
+  color: white;
+}
+
+
+
+.footer-links a:hover {
+  opacity: 1;
+}
+
+.footer .fa-heart {
+  color: #D23333;
+}
