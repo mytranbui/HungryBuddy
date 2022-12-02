@@ -81,9 +81,9 @@ users.each do |user|
   user.save
 end
 
-puts 'Finished with the users!'
+# puts 'Finished with the users!'
 
-puts 'Creating one friendship and one chatroom'
+# puts 'Creating one friendship and one chatroom'
 alex = User.find_by(first_name: "Alexandr")
 salome = User.find_by(first_name: "Salome")
 my = User.find_by(first_name: "My Tran")

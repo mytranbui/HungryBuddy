@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   get "users", to: "pages#users"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :foodplaces do
-    resources :reviews
+    resources :reviews, only: :create
   end
-  resources :reviews
+  # resources :reviews
 
   resources :lists do
     resources :bookmarks, only: [:new, :create]
