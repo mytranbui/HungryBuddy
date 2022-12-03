@@ -15,29 +15,34 @@
   <h1>FoodPlaces</h1>
   <div class="card-wrap">
     <% @foodplaces.each do |foodplace| %>
-        <div class="card-thumbnail">
+      <div class="card-thumbnail">
         <%= link_to foodplace_path(foodplace) do %>
           <div class="card-image">
             <% if foodplace.photo.present? %>
               <%= cl_image_tag foodplace.photo.key %>
+              <a href="#"><i class="fa-regular fa-bookmark"></i></i></a>
+              <a href="#"><i class="fa-regular fa-heart"></i></a>
+              <!--<p>rating<%= foodplace.google_rating %></p> -->
             <% else %>
               <img src="https://imgflip.com/s/meme/Grandma-Finds-The-Internet.jpg" />
             <% end %>
-            </div>
-              <h4><span><%= foodplace.name %></span></h4>
-                <h6><%= foodplace.address %></h6>
-                <p>rating<%= foodplace.google_rating %></p>
-                <p><%= foodplace.opening_times %></p>
+          </div>
+          <div class="card-info-wrapper">
+            <h4><span><%= foodplace.name %></span></h4>
+            <h6><%= foodplace.address %></h6>
+            <h4 class="rating">rating <%= foodplace.google_rating %></h4>
+            <p><%= foodplace.opening_times %></p>
+          </div>
         <% end %>
-        </div>
+      </div>
     <% end %>
-     </div>
+  </div>
     <div style="width: 100%; height: 600px;"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
-  </div>
+</div>
 
 
 <div class=“card” style=“width: 18rem;“>
