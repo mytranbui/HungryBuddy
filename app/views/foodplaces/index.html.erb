@@ -20,9 +20,9 @@
           <div class="card-image">
             <% if foodplace.photo.present? %>
               <%= cl_image_tag foodplace.photo.key %>
-              <a href="#"><i class="fa-regular fa-bookmark"></i></i></a>
-              <a href="#"><i class="fa-regular fa-heart"></i></a>
-              <!--<p>rating<%= foodplace.google_rating %></p> -->
+            <button type="button" onclick="alert('favorited!')" class="fa-regular fa-heart"><%current_user.favorite(foodplace)%></button>
+              <%# <a href="#"><i class="fa-regular fa-bookmark"></i></i></a>
+              <a href="#"><i class="fa-regular fa-heart"></i></a> %>
             <% else %>
               <img src="https://imgflip.com/s/meme/Grandma-Finds-The-Internet.jpg" />
             <% end %>
