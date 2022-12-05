@@ -33,6 +33,7 @@
             <% if foodplace.photo.present? %>
               <%= cl_image_tag foodplace.photo.key %>
 
+
               <%= link_to favorite_foodplace_path(foodplace, scope: :favorite), data: { turbo_method: :patch } do %>
                 <i class="fa-regular fa-heart icon-index"></i>
               <% end %>
@@ -47,6 +48,7 @@
                 <i class="fa-regular fa-circle-check icon-index"></i>
 
               <% end %>
+
 
             <% else %>
               <img src="https://imgflip.com/s/meme/Grandma-Finds-The-Internet.jpg" />
@@ -68,7 +70,7 @@
     <h2 class=“card-text”>Some quick example text</p>
   </div>
   <div>
-  <p>something else</p>
+    <p>something else</p>
   </div>
 </div> %>
 </div>
