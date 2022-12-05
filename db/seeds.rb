@@ -9,6 +9,7 @@ require 'faker'
 require "open-uri"
 
 puts "Destroying all seeds..."
+Favorite.destroy_all
 Review.destroy_all
 User.destroy_all
 Foodplace.destroy_all
