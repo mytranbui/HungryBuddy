@@ -22,30 +22,19 @@ class FoodplacesController < ApplicationController
       {
         lat: @foodplace.latitude,
         lng: @foodplace.longitude,
-        info_window: render_to_string(partial: "info_window", locals: {foodplace: @foodplace})
+        info_window: render_to_string(partial: "info_window", locals: { foodplace: @foodplace })
       }
     ]
   end
 
   def map
     @foodplaces = Foodplace.all
-      @markers = @foodplaces.geocoded.map do |foodplace|
+    @markers = @foodplaces.geocoded.map do |foodplace|
       {
         lat: foodplace.latitude,
         lng: foodplace.longitude,
         info_window: render_to_string(partial: "info_window", locals: { foodplace: foodplace })
       }
-    end
-  end
-
-  def map
-    @foodplaces = Foodplace.all
-    @markers = @foodplaces.geocoded.map do |foodplace|
-    {
-      lat: foodplace.latitude,
-      lng: foodplace.longitude,
-      info_window: render_to_string(partial: "info_window", locals: { foodplace: foodplace })
-    }
     end
   end
 
