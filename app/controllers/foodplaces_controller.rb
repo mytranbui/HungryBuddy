@@ -49,17 +49,6 @@ class FoodplacesController < ApplicationController
     end
   end
 
-  def show
-    @review = Review.new
-    # @markers = @foodplace.geocoded.map do |foodplace|
-    #   {
-    #     lat: foodplace.latitude,
-    #     lng: foodplace.longitude,
-    #     info_window: render_to_string(partial: "info_window", locals: {foodplace: foodplace})
-    #   }
-    #   end
-  end
-
   private
 
   def set_foodplace
