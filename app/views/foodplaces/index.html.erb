@@ -11,7 +11,19 @@
 </div>
 -->
 
-<div class="container mt-5">
+<div class="warpper">
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+      <%= form_with url: foodplaces_path, method: :get, class: "d-flex"  do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "search for a foodplace"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+    <div class="container"></div>
   <h1>FoodPlaces</h1>
   <div class="card-wrap">
     <% @foodplaces.each do |foodplace| %>
@@ -20,9 +32,15 @@
           <div class="card-image">
             <% if foodplace.photo.present? %>
               <%= cl_image_tag foodplace.photo.key %>
-              <a href="#"><i class="fa-regular fa-bookmark"></i></i></a>
-              <a href="#"><i class="fa-regular fa-heart"></i></a>
-              <!--<p>rating<%= foodplace.google_rating %></p> -->
+
+              <%= link_to favorite_foodplace_path(foodplace, scope: :favorite), data: { turbo_method: :patch } do %>
+                <i class="fa-regular fa-heart"></i>
+              <% end %>
+
+              <%= link_to favorite_foodplace_path(foodplace, scope: :saved), data: { turbo_method: :patch } do %>
+                <i class="fa-regular fa-bookmark"></i>
+              <% end %>
+              
             <% else %>
               <img src="https://imgflip.com/s/meme/Grandma-Finds-The-Internet.jpg" />
             <% end %>
@@ -30,7 +48,7 @@
           <div class="card-info-wrapper">
             <h4><span><%= foodplace.name %></span></h4>
             <h6><%= foodplace.address %></h6>
-            <h4 class="rating">rating <%= foodplace.google_rating %></h4>
+            <h4 class="rating"><%= foodplace.google_rating %></h4>
             <p><%= foodplace.opening_times %></p>
           </div>
         <% end %>

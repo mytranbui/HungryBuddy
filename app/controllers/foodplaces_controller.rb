@@ -1,11 +1,11 @@
 class FoodplacesController < ApplicationController
-  before_action :set_foodplace, only: %i[show]
+  before_action :set_foodplace, only: %i[show favorite]
 
   def index
     if params[:query].present?
       @foodplaces = Foodplace.where("name ILIKE ?", "%#{params[:query]}%")
     else
-      @foodplaces = Foodplace.all
+      @foodplaces = Foodplace.order(google_rating: :desc)
       # @markers = @foodplaces.geocoded.map do |foodplace|
       # {
       #   lat: foodplace.latitude,
@@ -22,14 +22,14 @@ class FoodplacesController < ApplicationController
       {
         lat: @foodplace.latitude,
         lng: @foodplace.longitude,
-        info_window: render_to_string(partial: "info_window", locals: {foodplace: @foodplace})
+        info_window: render_to_string(partial: "info_window", locals: { foodplace: @foodplace })
       }
     ]
   end
 
   def map
     @foodplaces = Foodplace.all
-      @markers = @foodplaces.geocoded.map do |foodplace|
+    @markers = @foodplaces.geocoded.map do |foodplace|
       {
         lat: foodplace.latitude,
         lng: foodplace.longitude,
@@ -38,15 +38,8 @@ class FoodplacesController < ApplicationController
     end
   end
 
-  def map
-    @foodplaces = Foodplace.all
-    @markers = @foodplaces.geocoded.map do |foodplace|
-    {
-      lat: foodplace.latitude,
-      lng: foodplace.longitude,
-      info_window: render_to_string(partial: "info_window", locals: { foodplace: foodplace })
-    }
-    end
+  def favorite
+    current_user.favorite(@foodplace, scope: params[:scope])
   end
 
   private

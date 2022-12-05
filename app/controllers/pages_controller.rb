@@ -7,6 +7,8 @@ class PagesController < ApplicationController
 
   def profile
     @user = User.find(params[:id])
+    @favorites = current_user.all_favorites
+    console
   end
 
   def users

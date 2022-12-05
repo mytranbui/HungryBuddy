@@ -9,8 +9,12 @@ Rails.application.routes.draw do
   get "map", to:"foodplaces#map"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :foodplaces do
+    member do
+      patch :favorite
+    end
     resources :reviews, only: :create
   end
+
   # resources :reviews
   get "map", to: "foodplaces#map"
   resources :lists do
