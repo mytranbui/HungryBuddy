@@ -9,6 +9,7 @@ require 'faker'
 require "open-uri"
 
 puts "Destroying all seeds..."
+Favorite.destroy_all
 Review.destroy_all
 User.destroy_all
 Foodplace.destroy_all
@@ -95,7 +96,12 @@ users.each do |user_hash|
     last_name: user_hash[:last_name],
     nickname: user_hash[:nickname],
     email: user_hash[:email],
-    password: "123456"
+    password: "123456",
+    diet: user_hash[:diet],
+    likes: user_hash[:likes],
+    dislikes: user_hash[:dislikes],
+    allergies: user_hash[:allergies],
+    bio: user_hash[:bio]
   )
   file = URI.open(user_hash[:photo_url])
   user.photo.attach(io: file, filename: "#{user.first_name}.png", content_type: 'image/png')

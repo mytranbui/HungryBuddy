@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  acts_as_favoritable
+  acts_as_favoritor
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -8,4 +10,16 @@ class User < ApplicationRecord
   has_many :reviews
   has_one_attached :photo
   # has_many :friendships ??
+
+  def all_saves
+    Favorite.saved_list.where(favoritor_id: id)
+  end
+
+  def all_visits
+    Favorite.visited_list.where(favoritor_id: id)
+  end
+
+  def all_faves
+    Favorite.favorite_list.where(favoritor_id: id)
+  end
 end
