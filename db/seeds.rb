@@ -20,7 +20,8 @@ puts 'Creating foodplaces...'
 
 addresses = ["Huttenstraße 7, 10553 Berlin", "Zinnowitzer Str. 5, 10115 Berlin", "Potsdamer Str. 69, 10785 Berlin", \
               "Lützowstraße 19, 10785 Berlin", "Potsdamer Str. 84, 10785 Berlin", "Potsdamer Str. 75, 10785 Berlin", \
-              "Potsdamer Str. 85, 10785 Berlin","Potsdamer Str. 99, 10785 Berlin","Potsdamer Str. 73, 10785 Berlin","Eichhornstraße 3, 10785 Berlin"]
+              "Potsdamer Str. 85, 10785 Berlin","Potsdamer Str. 99, 10785 Berlin","Potsdamer Str. 73, 10785 Berlin", \
+              "Eichhornstraße 3, 10785 Berlin"]
 i = 0
 # User.create(email: "test@gmail.com", password: "123456")
 10.times do
