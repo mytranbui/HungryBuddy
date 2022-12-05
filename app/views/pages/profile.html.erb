@@ -21,13 +21,45 @@
     <p>Diet: <%= @user.diet %></p>
     <p>Likes:<%= @user.likes %></p>
     <p>Dislikes: <%= @user.dislikes %></p>
-    <p>Allergie: <%= @user.allergies %></p>
+    <p>Allergies: <%= @user.allergies %></p>
     <p>Bio: <%= @user.bio %></p>
   </div>
-  <%# <% Favorite.favorite_list.each do |F| %> %>
-    <%# <%=  f %> %>
-  <%# <% @favorites.each do |fav| %>
-  <%# <% end %> %>
-  <%= link_to "edit", edit_user_registration_path  %>
+    <%= link_to "edit", edit_user_registration_path  %>
+    <div class="card-wrap">
+    <% current_user.all_favorites.each do |foodplace| %>
+      <% foodplace = Foodplace.find(foodplace.favoritable_id) %>
+      <div class="card-thumbnail">
+        <%= link_to foodplace_path(foodplace) do %>
+          <div class="card-image">
+            <% if foodplace.photo.present? %>
+              <%= cl_image_tag foodplace.photo.key %>
+            <button type="button" onclick="alert('favorited!')" class="fa-regular fa-heart"><%current_user.favorite(foodplace)%></button>
+              <%# <a href="#"><i class="fa-regular fa-bookmark"></i></i></a>
+              <a href="#"><i class="fa-regular fa-heart"></i></a> %>
+            <% else %>
+              <img src="https://imgflip.com/s/meme/Grandma-Finds-The-Internet.jpg" />
+            <% end %>
+          </div>
+          <div class="card-info-wrapper">
+            <h4><span><%= foodplace.name %></span></h4>
+            <h6><%= foodplace.address %></h6>
+            <h4 class="rating"><%= foodplace.google_rating %></h4>
+            <p><%= foodplace.opening_times %></p>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
 
+
+
+    <p>FAVES</p>
+    <% current_user.all_favorites.each do |f| %>
+      <%= Foodplace.find(f.favoritable_id).name %>
+    <% end %>
+
+    <p>SAVED</p>
+    <% current_user.all_saved.each do |f| %>
+      <%= Foodplace.find(f.favoritable_id).name %>
+    <% end %>
+  </div>
 </div>

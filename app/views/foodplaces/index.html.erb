@@ -32,9 +32,15 @@
           <div class="card-image">
             <% if foodplace.photo.present? %>
               <%= cl_image_tag foodplace.photo.key %>
-            <button type="button" onclick="alert('favorited!')" class="fa-regular fa-heart"><%current_user.favorite(foodplace)%></button>
-              <%# <a href="#"><i class="fa-regular fa-bookmark"></i></i></a>
-              <a href="#"><i class="fa-regular fa-heart"></i></a> %>
+
+              <%= link_to favorite_foodplace_path(foodplace, scope: :favorite), data: { turbo_method: :patch } do %>
+                <i class="fa-regular fa-heart"></i>
+              <% end %>
+
+              <%= link_to favorite_foodplace_path(foodplace, scope: :saved), data: { turbo_method: :patch } do %>
+                <i class="fa-regular fa-bookmark"></i>
+              <% end %>
+              
             <% else %>
               <img src="https://imgflip.com/s/meme/Grandma-Finds-The-Internet.jpg" />
             <% end %>
@@ -42,7 +48,7 @@
           <div class="card-info-wrapper">
             <h4><span><%= foodplace.name %></span></h4>
             <h6><%= foodplace.address %></h6>
-            <h4 class="rating">rating <%= foodplace.google_rating %></h4>
+            <h4 class="rating"><%= foodplace.google_rating %></h4>
             <p><%= foodplace.opening_times %></p>
           </div>
         <% end %>
