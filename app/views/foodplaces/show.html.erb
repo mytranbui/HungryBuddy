@@ -17,17 +17,6 @@
     <%= @foodplace.phone_number %>
     <%= @foodplace.website %>
   </div>
-  <div>
-    <%= @foodplace.address%>
-    <!--add map -->
-    <div id="map" style="width: 100%; height: 600px;"
-      data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-    <!------------>
-  </div>
-</div>
 
 <!--add review -->
 <h2><%= pluralize @foodplace.reviews.size, "review" %></h2>
