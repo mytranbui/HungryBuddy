@@ -57,17 +57,19 @@
         <% end %>
       </div>
     <% end %>
-
-
-
+</div>
     <p>FAVES</p>
     <% current_user.all_favorites.each do |f| %>
       <%= Foodplace.find(f.favoritable_id).name %>
     <% end %>
 
     <p>SAVED</p>
-    <% current_user.all_saved.each do |f| %>
+    <% current_user.all_saves.each do |f| %>
+      <%= Foodplace.find(f.favoritable_id).name %>
+    <% end %>
+
+    <p>VISITED</p>
+    <% current_user.all_visits.each do |f| %>
       <%= Foodplace.find(f.favoritable_id).name %>
     <% end %>
   </div>
-</div>

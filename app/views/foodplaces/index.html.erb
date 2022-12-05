@@ -34,13 +34,20 @@
               <%= cl_image_tag foodplace.photo.key %>
 
               <%= link_to favorite_foodplace_path(foodplace, scope: :favorite), data: { turbo_method: :patch } do %>
-                <i class="fa-regular fa-heart"></i>
+                <i class="fa-regular fa-heart icon-index"></i>
+              <% end %>
+              <br>
+              <%= link_to favorite_foodplace_path(foodplace, scope: :saved), data: { turbo_method: :patch } do %>
+                <i class="fa-regular fa-bookmark icon-index"></i>
+
+              <% end %>
+              <br>
+
+              <%= link_to favorite_foodplace_path(foodplace, scope: :visited), data: { turbo_method: :patch } do %>
+                <i class="fa-regular fa-circle-check icon-index"></i>
+
               <% end %>
 
-              <%= link_to favorite_foodplace_path(foodplace, scope: :saved), data: { turbo_method: :patch } do %>
-                <i class="fa-regular fa-bookmark"></i>
-              <% end %>
-              
             <% else %>
               <img src="https://imgflip.com/s/meme/Grandma-Finds-The-Internet.jpg" />
             <% end %>
