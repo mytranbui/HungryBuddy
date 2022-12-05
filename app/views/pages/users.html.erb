@@ -7,15 +7,19 @@
     %>
     <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
-  <h1>USERS</h1>
+  <h1 class="users-title">USERS</h1>
   <% @users.each do |user| %>
-    <%= link_to profile_path(user) do %>
-      <div class="new-card">
-        <%= user.nickname %>
-        <div class="avatar-large">
-        <%= cl_image_tag user.photo.key if user.photo.attached? %>
+    <div class="new-card">
+      <%= link_to profile_path(user), class: 'd-flex align-items-center'  do %>
+        <div class="avatar-large pe-3">
+          <%= cl_image_tag user.photo.key if user.photo.attached?%>
         </div>
-      </div>
-    <% end %>
+        <h2 class="user-name-text"><%= user.nickname%></h2>
+      <% end %>
+      <%= link_to "#" do %>
+        <i class="fa-solid fa-user-plus fa-2x"></i>
+      <% end %>
+    </div>
   <% end %>
+
 </div>
