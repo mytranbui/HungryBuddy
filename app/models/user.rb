@@ -12,4 +12,16 @@ class User < ApplicationRecord
   has_many :reviews
   has_one_attached :photo
   # has_many :friendships ??
+
+  def all_saves
+    Favorite.saved_list.where(favoritor_id: id)
+  end
+
+  def all_visits
+    Favorite.visited_list.where(favoritor_id: id)
+  end
+
+  def all_faves
+    Favorite.favorite_list.where(favoritor_id: id)
+  end
 end

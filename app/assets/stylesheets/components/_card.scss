@@ -52,19 +52,26 @@
       object-fit: cover;
       width: 100%;
   }
-  .fa-heart {
+
+  .icon-index {
     color: white;
     position: absolute;
     top: 10px;
     right: 10px;
   }
+
+  .fa-heart {
+  }
+
   .fa-bookmark{
-    color: white;
-    position: absolute;
-    top: 10px;
-    right: 10px;
     padding-right: 20px;
   }
+
+  .fa-circle-check{
+    padding-right: 40px;
+  }
+
+
   // .rating {
   //   z-index: 10;
   //   color: red;
@@ -78,10 +85,11 @@
   position: relative;
   padding-left: 8px;
   padding-top: 4px;
-  .rating {
+  .ratings {
     position: absolute;
     bottom: 20px;
     right: 4px;
+    text-align: end;
   }
 }
 
@@ -191,11 +199,4 @@ a{
 }
 .fa-user-group:hover {
   color: green;
-}
-
-.white-circle {
-  width: 56px;
-  border: 2px solid white;
-  border-radius: 50px;
-  text-align: center;
 }

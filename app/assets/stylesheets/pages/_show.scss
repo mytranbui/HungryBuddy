@@ -1,0 +1,40 @@
+// .centered {
+//   margin: 0 auto;
+//   text-align: center;
+// }
+
+:root {
+  --gl-star-size: 44px;
+  // --gl-tooltip-border-radius: 4px;
+  // --gl-tooltip-font-size: 0.875rem;
+  // --gl-tooltip-font-weight: 400;
+  // --gl-tooltip-line-height: 1;
+  // --gl-tooltip-margin: 12px;
+  // --gl-tooltip-padding: .5em 1em;
+  // --gl-tooltip-size: 6px;
+}
+
+.info {
+  margin: 0px;
+  justify-content: space-between;
+}
+
+.show-btns {
+  justify-content: space-between;
+}
+
+.show-btn {
+  min-width: 64px;
+  min-height: 64px;
+  background-color: inherit;
+  color: orange;
+}
+
+.review-card {
+  max-height: 256px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;  padding: 8px;
+}
+
+.h2, h1, h3, h4 {
+  margin: 0
+}

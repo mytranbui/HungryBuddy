@@ -9,6 +9,7 @@ require 'faker'
 require "open-uri"
 
 puts "Destroying all seeds..."
+Favorite.destroy_all
 Review.destroy_all
 User.destroy_all
 Foodplace.destroy_all
@@ -20,8 +21,7 @@ puts 'Creating foodplaces...'
 
 addresses = ["Huttenstraße 7, 10553 Berlin", "Zinnowitzer Str. 5, 10115 Berlin", "Potsdamer Str. 69, 10785 Berlin", \
               "Lützowstraße 19, 10785 Berlin", "Potsdamer Str. 84, 10785 Berlin", "Potsdamer Str. 75, 10785 Berlin", \
-              "Potsdamer Str. 85, 10785 Berlin","Potsdamer Str. 99, 10785 Berlin","Potsdamer Str. 73, 10785 Berlin", \
-              "Eichhornstraße 3, 10785 Berlin"]
+              "Potsdamer Str. 85, 10785 Berlin","Potsdamer Str. 99, 10785 Berlin","Potsdamer Str. 73, 10785 Berlin","Eichhornstraße 3, 10785 Berlin"]
 i = 0
 # User.create(email: "test@gmail.com", password: "123456")
 10.times do
@@ -96,7 +96,12 @@ users.each do |user_hash|
     last_name: user_hash[:last_name],
     nickname: user_hash[:nickname],
     email: user_hash[:email],
-    password: "123456"
+    password: "123456",
+    diet: user_hash[:diet],
+    likes: user_hash[:likes],
+    dislikes: user_hash[:dislikes],
+    allergies: user_hash[:allergies],
+    bio: user_hash[:bio]
   )
   file = URI.open(user_hash[:photo_url])
   user.photo.attach(io: file, filename: "#{user.first_name}.png", content_type: 'image/png')

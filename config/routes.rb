@@ -6,11 +6,15 @@ Rails.application.routes.draw do
   get "dashboard", to: "pages#dashboard", as: :dashboard
   get "profile/:id", to: "pages#profile", as: :profile
   get "users", to: "pages#users"
-  get "map", to:"foodplaces#map"
+  get "map", to: "foodplaces#map"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :foodplaces do
+    member do
+      patch :favorite
+    end
     resources :reviews, only: :create
   end
+
   # resources :reviews
   get "map", to: "foodplaces#map"
   resources :lists do
