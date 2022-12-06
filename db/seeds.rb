@@ -14,14 +14,13 @@ Review.destroy_all
 User.destroy_all
 Foodplace.destroy_all
 
-# Friendship.destroy_all
-
 categories = ["restaurant", "bar", "cafe"]
-puts 'Creating foodplaces...'
 
+puts 'Creating foodplaces...'
 addresses = ["Huttenstraße 7, 10553 Berlin", "Zinnowitzer Str. 5, 10115 Berlin", "Potsdamer Str. 69, 10785 Berlin", \
               "Lützowstraße 19, 10785 Berlin", "Potsdamer Str. 84, 10785 Berlin", "Potsdamer Str. 75, 10785 Berlin", \
-              "Potsdamer Str. 85, 10785 Berlin","Potsdamer Str. 99, 10785 Berlin","Potsdamer Str. 73, 10785 Berlin","Eichhornstraße 3, 10785 Berlin"]
+              "Potsdamer Str. 85, 10785 Berlin","Potsdamer Str. 99, 10785 Berlin", "Potsdamer Str. 73, 10785 Berlin", \
+                "Eichhornstraße 3, 10785 Berlin"]
 i = 0
 # User.create(email: "test@gmail.com", password: "123456")
 10.times do
@@ -33,6 +32,21 @@ i = 0
   foodplace.save
   i += 1
 end
+
+
+# foodplace = [
+#   {
+#     name: "Joseph-Roth-Diele",
+#     address: " Potsdamer Str. 75, 10785 Berlin",
+#     cuisine: "German",
+#     phone_number: " 030 26369884",
+#     category: "restaurant",
+#     website: "https://www.joseph-roth-diele.de/",
+#     google_rating: "4.4",
+#     opening_times: "",
+#     photo_url: ""
+#   }
+# ]
 
 puts 'Creating users...'
 users = [
