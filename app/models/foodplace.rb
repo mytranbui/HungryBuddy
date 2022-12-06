@@ -13,7 +13,7 @@ class Foodplace < ApplicationRecord
   def average_rating
     all_ratings = self.reviews.pluck(:rating).compact
     if all_ratings.count == 0
-      all_ratings = "not available"
+      all_ratings = 0
     else
     (all_ratings.sum / all_ratings.count).round(1)
     end

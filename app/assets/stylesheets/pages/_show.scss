@@ -14,9 +14,21 @@
   // --gl-tooltip-size: 6px;
 }
 
+.shadow {
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+}
+
+.show-img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
 .info {
-  margin: 0px;
-  justify-content: space-between;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  text-align: center;
 }
 
 .show-btns {
@@ -32,9 +44,18 @@
 
 .review-card {
   max-height: 256px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;  padding: 8px;
-}
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;}
 
 .h2, h1, h3, h4 {
   margin: 0
 }
+
+.centered {
+  text-align: center;
+}
+
+.gray {
+  color: grey;
+}
+
+
