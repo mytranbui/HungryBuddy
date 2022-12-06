@@ -1,67 +1,65 @@
 <div class="container mt-5">
 <%= link_to foodplaces_path do%>
 <div class="header flex">
-<h3>Top Berliner Foodplaces According To Google    > </h3>
-<br>
-</div>
+<%# <h3>Top Berliner Foodplaces According To Google    > </h3> %>
 <%end%>
- <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+ <%# <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="10000">
           <div class="card" style="width: 20rem;">
           <% foodplaces.each do |foodplace| %>
-            <img src="https://source.unsplash.com/random/?restaurant" class="d-block w-100" alt="...">
+            <%# <img src="https://source.unsplash.com/random/?restaurant" class="d-block w-100" alt="...">
           <div class="card-body">
             <%= link_to foodplace_path(foodplace) do %>
-             <h2><%= foodplace.name%></h2>
-                <h3> <%= foodplace.address %> </h3>
-                <p> <%= foodplace.google_rating %></p>
-            <% end %>
-         </div>
+             <%# <h2><%= foodplace.name%>
+                <%# <h3> <%= foodplace.address %>
+                <%# <p> <%= foodplace.google_rating %>
+            <%# <% end %>
+         <%# </div>
          <% end %>
-        </div>
-      </div>
-      <div class="carousel-item active" data-bs-interval="10000">
+        <%# </div>
+      </div> %>
+      <%# <div class="carousel-item active" data-bs-interval="10000">
           <div class="card" style="width: 20rem;">
           <% foodplaces.each do |foodplace| %>
-            <img src="https://source.unsplash.com/random/?restaurant" class="d-block w-100" alt="...">
+            <%# <img src="https://source.unsplash.com/random/?restaurant" class="d-block w-100" alt="...">
           <div class="card-body">
             <%= link_to foodplace_path(foodplace) do %>
-             <h2><%= foodplace.name%></h2>
-                <h3> <%= foodplace.address %> </h3>
-                <p> <%= foodplace.google_rating %></p>
-            <% end %>
-         </div>
+             <%# <h2><%= foodplace.name%>
+                <%# <h3> <%= foodplace.address %>
+                <%# <p> <%= foodplace.google_rating %>
+            <%# <% end %>
+         <%# </div>
          <% end %>
-        </div>
-      </div>
-      <div class="carousel-item active" data-bs-interval="10000">
+        <%# </div>
+      </div> %>
+      <%# <div class="carousel-item active" data-bs-interval="10000">
           <div class="card" style="width: 20rem;">
           <% foodplaces.each do |foodplace| %>
-            <img src="https://source.unsplash.com/random/?restaurant" class="d-block w-100" alt="...">
+            <%# <img src="https://source.unsplash.com/random/?restaurant" class="d-block w-100" alt="...">
           <div class="card-body">
             <%= link_to foodplace_path(foodplace) do %>
-             <h2><%= foodplace.name%></h2>
-                <h3> <%= foodplace.address %> </h3>
-                <p> <%= foodplace.google_rating %></p>
-            <% end %>
-         </div>
-         <% end %>
-        </div>
-      </div>
-      <div class="carousel-item active" data-bs-interval="10000">
+             <%# <h2><%= foodplace.name%>
+                <%# <h3> <%= foodplace.address %>
+                <%# <p> <%= foodplace.google_rating %>
+            <%# <% end %>
+         <%# </div>
+         <%# <% end %>
+        <%# </div>
+      </div> %>
+      <%# <div class="carousel-item active" data-bs-interval="10000">
           <div class="card" style="width: 20rem;">
           <% foodplaces.each do |foodplace| %>
-            <img src="https://source.unsplash.com/random/?restaurant" class="d-block w-100" alt="...">
+            <%# <img src="https://source.unsplash.com/random/?restaurant" class="d-block w-100" alt="...">
           <div class="card-body">
             <%= link_to foodplace_path(foodplace) do %>
-             <h2><%= foodplace.name%></h2>
-                <h3> <%= foodplace.address %> </h3>
-                <p> <%= foodplace.google_rating %></p>
-            <% end %>
-         </div>
+             <%# <h2><%= foodplace.name</h2>
+                <h3> <%= foodplace.address %>
+                <%# <p> <%= foodplace.google_rating %>
+            <%# end %>
+         <%# </div>
          <% end %>
-        </div>
+        <%# </div>
       </div>
       </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
@@ -74,4 +72,53 @@
           </button>
       </div>
     </div>
-</div>
+</div>  %>
+
+<div id="myCarousel" class="carousel slide home-carousel" data-bs-ride="carousel" style="height: 245px">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+    </div>
+    <div class="carousel-inner" style="height: 100%">
+      <div class="carousel-item active carousel-item-start carou-item" style="border-radius:">
+        <img class="bd-placeholder-img" width="100%" height="100%" src="https://dq5r178u4t83b.cloudfront.net/wp-content/uploads/sites/133/2020/03/18080328/SO_Berlin_Das_Stue_RestaurantsBar-Box-Cinco_gallery.jpg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false" style="width=100%, height=100%, fill=#777">
+        <div class="container">
+          <div class="carousel-caption text-start carou-text">
+            <h3 class="carou-text">Top Berliner Foodplaces </h3>
+            <br>
+            <p><a class="btn btn-lg btn btn-primary" href="/foodplaces">Explore</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item carousel-item-next carousel-item-start carou-item">
+        <img class="bd-placeholder-img" width="100%" height="100%" src="https://tele2iot.com/wp/uploads/2022/08/hero-dark-1024x661.jpg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false" style="width=100%, height=100%, fill=#777">
+          <div class="container">
+              <div class="carousel-caption text-start carou-text">
+              <h3>Find your hungry buddy</h3>
+              <br>
+            <%# <p><i> from fastfood to gourmet. choose your warrior, dive into the versatility of tastes and share your experience </i></p> %>
+             <p><a class="btn btn-lg btn-primary" href="#">Sign Up</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item carou-item">
+        <img class="bd-placeholder-img" width="100%" height="100%" src="https://www.cashdesk-pos.com/wp-content/uploads/2019/07/rohan-g-803060-unsplash-1-1024x731.jpg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false" style="width=100%, height=100%, fill=#777">
+        <div class="container">
+          <div class="carousel-caption text-start carou-text">
+            <h3>See what do our users prefer</h3>
+            <br>
+           <p><a class="btn btn-lg btn-primary" href="#">Here</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>

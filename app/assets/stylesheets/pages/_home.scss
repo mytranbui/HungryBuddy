@@ -1,5 +1,28 @@
 // Specific CSS for your home-page
+body{
+  color: #EFEFEF;
+
+}
 #home-tab, #profile-tab{
   color: #F66B0E;
 }
 
+// .container .orange-box{
+//   border: solid #F66B0E 1px;
+//   background-color:  #f66b0e95;
+//   border-radius: 5%;
+// }
+
+.home-carousel{
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px 8px #888888;
+}
+.carou-text{
+  text-shadow: 2px 2px 3px #F66B0E;
+  font-size: 18px;
+}
+
+.carou-item{
+  height:100%;
+}
