@@ -1,2 +1,17 @@
-<h2><%= foodplace.name %></h2>
-<p><%= foodplace.address %></p>
+<%= link_to foodplace_path(foodplace) do %>
+  <div class="card-product border shadow rounded bg-color">
+
+    <% if foodplace.photo.present? %>
+      <%= cl_image_tag foodplace.photo.key %>
+    <% else %>
+      <img src="https://imgflip.com/s/meme/Grandma-Finds-The-Internet.jpg" />
+    <% end %>
+
+    <div class="card-product-infos d-flex flex-column">
+      <p><%= foodplace.name %></p>
+      <p><%= foodplace.address %></p>
+    </div>
+
+  </div>
+
+<% end %>

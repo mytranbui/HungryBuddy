@@ -5,5 +5,14 @@
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
+
+    @markers = @foodplaces.map do |foodplace|
+    {
+      lat: foodplace.latitude,
+      lng: foodplace.longitude,
+      info_window: render_to_string(partial: "info_window", locals: {foodplace: foodplace}),
+      image_url: ""https://imgflip.com/s/meme/Grandma-Finds-The-Internet.jpg""
+    }
+  end
     <!------------>
   </div>
