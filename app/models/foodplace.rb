@@ -1,4 +1,5 @@
 class Foodplace < ApplicationRecord
+  acts_as_favoritable
   has_one_attached :photo
   has_many :reviews, dependent: :destroy
   has_many :bookmarks
