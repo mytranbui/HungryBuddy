@@ -78,10 +78,11 @@
   position: relative;
   padding-left: 8px;
   padding-top: 4px;
-  .rating {
+  .ratings {
     position: absolute;
     bottom: 20px;
     right: 4px;
+    text-align: end;
   }
 }
 

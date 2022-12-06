@@ -8,8 +8,8 @@
     <div class="info d-flex">
       <h2><%= @foodplace.name %></h2>
       <div class="ratings">
-        <h2>User rating <%= @foodplace.average_rating %></h2>
-        <h5>Google rating <%= @foodplace.google_rating %></h5>
+        <h3>User rating <%= @foodplace.average_rating %></h3>
+        <h4>Google rating <%= @foodplace.google_rating %></h4>
       </div>
     </div>
     <!-- Button trigger modal -->
@@ -96,36 +96,40 @@
   </div>
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#comments">
-  User reviews
-</button>
+  <button type="button" class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#comments">
+    User reviews
+  </button>
 
 <!-- Modal -->
-<div class="modal fade" id="comments" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">User reviews</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <% if @foodplace.reviews.blank? %>
-        Be the first to leave a review for "<%= @foodplace.name %>"
-      <% else %>
-        <% @foodplace.reviews.each do |review| %>
-          <p><%= review.comment %></p>
-          <p>nickname: <%= current_user.nickname %></p>
+  <div class="modal fade" id="comments" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="exampleModalLabel">User reviews</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <% if @foodplace.reviews.blank? %>
+          Be the first to leave a review for "<%= @foodplace.name %>"
+        <% else %>
+          <% @foodplace.reviews.each do |review| %>
+          <div class="review-card my-2">
+            <h4><%= current_user.nickname %></h4>
+            <h4><%= review.comment %></h4>
+            <p><%= review.created_at %></p>
+            <hr>
+          </div>
+          <% end %>
         <% end %>
-      <% end %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-  <div class=" container card-body my-2">
-    <div class="centered">
+    <div class=" container card-body my-2">
+      <div class="centered">
+      </div>
     </div>
-  </div>
 </div>
