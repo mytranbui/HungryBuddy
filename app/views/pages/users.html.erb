@@ -9,17 +9,22 @@
   <% end %>
   <h1 class="users-title">USERS</h1>
   <% @users.each do |user| %>
-    <div class="new-card">
-      <%= link_to profile_path(user), class: 'd-flex align-items-center'  do %>
-        <div class="avatar-large pe-3">
-          <%= cl_image_tag user.photo.key if user.photo.attached?%>
-        </div>
-        <h2 class="user-name-text"><%= user.nickname%></h2>
-      <% end %>
-      <%= link_to "#" do %>
-        <i class="fa-solid fa-user-plus fa-2x"></i>
-      <% end %>
-    </div>
+    <% unless current_user == user %>
+      <div class="new-card">
+        <%= link_to profile_path(user), class: 'd-flex align-items-center'  do %>
+          <div class="avatar-large pe-3">
+            <%= cl_image_tag user.photo.key if user.photo.attached?%>
+          </div>
+          <h2 class="user-name-text"><%= user.nickname%></h2>
+        <% end %>
+        <%= link_to follow_path(user: user) do %>
+        <% if current_user.following?(user) %>
+          <i class="fa-solid fa-user-minus fa-2x"></i>
+        <% elsif current_user.stop_following(user) %>
+          <i class="fa-solid fa-user-plus fa-2x"></i>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
   <% end %>
-
 </div>

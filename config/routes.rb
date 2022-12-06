@@ -22,4 +22,7 @@ Rails.application.routes.draw do
   end
   resources :bookmarks, only: [:destroy]
   # not sure about the routes
+  get "follow", to: "followers#follow"
+  post '/users/:id/follow', to: "users#follow", as: "follow_user"
+  post '/users/:id/unfollow', to: "users#unfollow", as: "unfollow_user"
 end
