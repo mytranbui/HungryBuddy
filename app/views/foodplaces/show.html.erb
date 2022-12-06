@@ -23,22 +23,19 @@
         <i class="fa-solid fa-star"></i>
       </button> %>
       <div>
-        <button type="button" class="btn  ">
-          <i class="fa-regular fa-heart show-btn fa-3x my-2"></i>
-
-        </button>
+        <%= link_to favorite_foodplace_path(@foodplace, scope: :favorite), data: { turbo_method: :patch } do %>
+          <i class="fa-regular fa-heart show-btn fa-3x my-2 "></i>
+        <% end %>
       </div>
       <div>
-        <button type="button" class="btn">
-          <i class="fa-regular fa-bookmark show-btn fa-3x my-2"></i>
-
-        </button>
+        <%= link_to favorite_foodplace_path(@foodplace, scope: :saved), data: { turbo_method: :patch } do %>
+           <i class="fa-regular fa-bookmark show-btn fa-3x my-2 "></i>
+        <% end %>
       </div>
       <div>
-        <button type="button" class="btn">
-          <i class="fa-solid fa-globe show-btn fa-3x my-2"></i>
-
-        </button>
+        <%= link_to favorite_foodplace_path(@foodplace, scope: :visited), data: { turbo_method: :patch } do %>
+          <i class="fa-regular fa-circle-check show-btn fa-3x my-2 "></i>
+        <% end %>
       </div>
     </div>
     <hr>
