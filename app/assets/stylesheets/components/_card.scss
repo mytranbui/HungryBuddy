@@ -39,25 +39,38 @@
 }
 
 .card-thumbnail {
-    width: calc(100% / 2 - 10px)
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+    width: calc(100% / 2 - 10px);
+    border-radius: 20px;
+    a {
+    // border-radius: 30px;
+    // background-color:#F66B0E;
+  };
+  img {
+    // border-radius: 40px;
+
+  };
 }
 
 .card-image {
+  border-radius: 20px;
   width: 100%;
-  height: 140px;
+  height: 150px;
   display: flex;
   overflow: hidden;
   position: relative;
   img {
       object-fit: cover;
       width: 100%;
+      height: 100%;
   }
 
   .icon-index {
-    color: white;
+    color: #F66B0E;
     position: absolute;
     top: 10px;
     right: 10px;
+    // width: 50px;
   }
 
   .fa-heart {
@@ -79,17 +92,32 @@
   //   bottom: -16px;
   //   right: 10px;
   // }
+  .rating {
+    display: flex;
+    gap: 50px;
+
+  .circle {
+    height: 14px;
+    width: 14px;
+    border-radius: 8px;
+    background-color: #F66B0E;
+  }
+}
 }
 
 .card-info-wrapper {
   position: relative;
-  padding-left: 8px;
-  padding-top: 4px;
+  padding: 8px;
   .ratings {
-    position: absolute;
-    bottom: 20px;
-    right: 4px;
-    text-align: end;
+    display: flex;
+    gap: 2px;
+  }
+  .circle {
+    height: 15px;
+    width: 15px;
+    border-radius: 8px;
+    // position: absolute;
+background-color: #F66B0E;
   }
 }
 
@@ -199,4 +227,8 @@ a{
 }
 .fa-user-group:hover {
   color: green;
+}
+
+.card-single {
+  height: 50%;
 }
