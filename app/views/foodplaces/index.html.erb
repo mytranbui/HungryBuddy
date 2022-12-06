@@ -34,7 +34,7 @@
           <%= link_to foodplace_path(foodplace), class: "w-100" do %>
             <div class="card-image">
               <% if foodplace.photo.present? %>
-                <%= cl_image_tag foodplace.photo.key %>
+                <%= cl_image_tag foodplace.photo.key%>
                 <%= link_to favorite_foodplace_path(foodplace, scope: :favorite), data: { turbo_method: :patch } do %>
                   <i class="fa-regular fa-heart icon-index "></i>
                 <% end %>
@@ -47,11 +47,23 @@
               <% else %>
                 <img src="https://imgflip.com/s/meme/Grandma-Finds-The-Internet.jpg" />
               <% end %>
-              <div class="rating d-flex">
-                <% i = 0  %>
-                <% while i < foodplace.google_rating.to_i.round %>
+              <div class="d-flex circle-wrapper">
+                <% x = 0 %>
+                <% ((((x * 2.0).round / 2.0)) - ((x * 2.0).round / 2.0) % 1).to_i.times do  %>
+                  <div class="circle-full"></div>
+                <% end %>
+                <% empty_circle = 0 %>
+                <%if((((x * 2.0).round / 2.0) % 1) < 0.5) %>
+                <% half_circle = 0 %>
+                <% else %>
+                <% half_circle = 1 %>
+                <% end %>
+                <% half_circle.times do %>
+                  <div class="circle-half"></div>
+                  <div class="circle-empty"></div>
+                <% end %>
+                <% (5 - (((x * 2.0).round / 2.0)) - ((x * 2.0).round / 2.0) % 1).to_i.times do %>
                   <div class="circle"></div>
-                  <% i +=1 %>
                 <% end %>
               </div>
             </div>
