@@ -23,11 +23,10 @@
     <p>Dislikes: <%= @user.dislikes %></p>
     <p>Allergie: <%= @user.allergies %></p>
     <p>Bio: <%= @user.bio %></p>
+     <%= link_to "edit", edit_user_registration_path%>
   </div>
-  <%# <% Favorite.favorite_list.each do |F| %> %>
-    <%# <%=  f %> %>
+  <%# <% Favorite.favorite_list.each do |F| %>
+    <%# <%=  f %>
   <%# <% @favorites.each do |fav| %>
-  <%# <% end %> %>
-  <%= link_to "edit", edit_user_registration_path  %>
-
+  <%# <% end %>
 </div>
