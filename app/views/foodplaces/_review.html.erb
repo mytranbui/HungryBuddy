@@ -1,1 +1,7 @@
-<p><%= review.comment %></p>
+<div class="container review-card my-2">
+  <h4><%= current_user.nickname %></h4>
+  <h3><%= review.highlight %></h3>
+  <h4><%= review.comment %></h4>
+  <p><%= review.created_at.strftime("%B %d, %Y") %></p>
+  <hr>
+</div>

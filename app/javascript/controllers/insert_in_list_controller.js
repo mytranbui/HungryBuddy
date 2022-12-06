@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="insert-in-list"
 export default class extends Controller {
-  static targets = ["items", "form"]
+  static targets = ["items", "form", "close"]
   static values = { position: String }
 
   connect() {
@@ -12,6 +12,7 @@ export default class extends Controller {
   }
 
   send(event) {
+    event.preventDefault()
     fetch(this.formTarget.action, {
       method: "POST",
       headers: { "Accept": "application/json" },
@@ -22,6 +23,7 @@ export default class extends Controller {
         if (data.inserted_item) {
           this.itemsTarget.insertAdjacentHTML(this.positionValue, data.inserted_item)
         }
+        this.closeTarget.click()
         this.formTarget.outerHTML = data.form
       })
   }

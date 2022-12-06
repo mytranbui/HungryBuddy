@@ -44,45 +44,7 @@
     <hr>
   </div>
 
-<!-- Modal -->
-  <div class="modal fade" id="review" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <!--add review -->
-          <h2>
-            <%= pluralize @foodplace.reviews.size, "review" %>
-          </h2>
-          <div data-controller="insert-in-list" data-insert-in-list-position-value="beforeend">
-            <div data-insert-in-list-target="items">
-            <!-- [...] -->
-            </div>
-            <%= simple_form_for([@foodplace, @review],
-              data: {
-              insert_in_list_target: "form",
-              action: "submit->insert-in-list#send"
-            }) do |f| %>
-              <%= f.input :date %>
-              <%= f.input :rating, collection: (1..5).to_a, label: "Overall rating",
-              input_html: {data: {controller: "star-rating"}} %>
-              <%= f.input :cleanliness, collection: (1..5).to_a, label: "Cleanliness:",
-              input_html: {data: {controller: "star-rating"}} %>
-              <%= f.input :service, collection: (1..5).to_a, label: "Service:",
-              input_html: {data: {controller: "star-rating"}} %>
-              <%= f.input :highlight %>
-              <%= f.input :comment %>
-              <%= f.button :submit, class:"btn btn-primary" %>
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
 <%# SHOW-TABS---------------------------------------------------------------------------------------------------- %>
   <div class="show-tabs my-2">
     <div class="w-100">
@@ -111,22 +73,39 @@
         <h4>Cuisine:  <%= @foodplace.cuisine %></h4>
       </div>
       <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-        <div class="reviews">
-          <% if @foodplace.reviews.blank? %>
-            Be the first to leave a review for "<%= @foodplace.name %>"
-          <% else %>
-          <% @foodplace.reviews.each do |review| %>
-            <div class="container review-card my-2">
-              <h4><%= current_user.nickname %></h4>
-              <h4>"<%= review.comment %>"</h4>
-              <p><%= review.created_at.strftime("%B %d, %Y") %></p>
-              <hr>
-            </div>
+        <div class="reviews" data-controller="insert-in-list" data-insert-in-list-position-value="beforeend">
+          <div data-insert-in-list-target="items">
+            <% if @foodplace.reviews.blank? %>
+              Be the first to leave a review for "<%= @foodplace.name %>"
+            <% else %>
+                <h2>
+                  <%= pluralize @foodplace.reviews.size, "review" %>
+                </h2>
+                <% @foodplace.reviews.each do |review| %>
+                  <%= render "review", review: review, current_user: current_user %>
+                <% end %>
             <% end %>
-          <% end %>
+          </div>
           <button type="button" class="btn w-100  btn-primary" data-bs-toggle="modal" data-bs-target="#review">
             Leave a review
           </button>
+          <!-- Modal -->
+          <div class="modal fade" id="review" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div >
+                      <%= render "reviews/form", foodplace: @foodplace, review: @review %>
+                      <button type="button" data-insert-in-list-target="close" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
