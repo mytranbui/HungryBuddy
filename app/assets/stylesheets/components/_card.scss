@@ -84,25 +84,15 @@
     padding-right: 40px;
   }
 
-
-  // .rating {
-  //   z-index: 10;
-  //   color: red;
-  //   position: absolute;
-  //   bottom: -16px;
-  //   right: 10px;
-  // }
-  .rating {
-    display: flex;
-    gap: 50px;
-
   .circle {
-    height: 14px;
-    width: 14px;
+    height: 15px;
+    width: 15px;
     border-radius: 8px;
+    position: absolute;
     background-color: #F66B0E;
+   bottom:10px;
+   left: 10px;
   }
-}
 }
 
 .card-info-wrapper {
@@ -112,14 +102,8 @@
     display: flex;
     gap: 2px;
   }
-  .circle {
-    height: 15px;
-    width: 15px;
-    border-radius: 8px;
-    // position: absolute;
-background-color: #F66B0E;
-  }
 }
+
 
 
 
