@@ -24,43 +24,45 @@
       <% end %>
     </div>
     <div class="container"></div>
-  <h1>FoodPlaces</h1>
+  <%# <h1>FoodPlaces</h1> %>
+
+
   <div class="card-wrap">
     <% @foodplaces.each do |foodplace| %>
       <div class="card-thumbnail">
-        <%= link_to foodplace_path(foodplace) do %>
-          <div class="card-image">
-            <% if foodplace.photo.present? %>
-              <%= cl_image_tag foodplace.photo.key %>
-
-
-              <%= link_to favorite_foodplace_path(foodplace, scope: :favorite), data: { turbo_method: :patch } do %>
-                <i class="fa-regular fa-heart icon-index"></i>
+        <div class="card-single">
+          <%= link_to foodplace_path(foodplace), class: "w-100" do %>
+            <div class="card-image">
+              <% if foodplace.photo.present? %>
+                <%= cl_image_tag foodplace.photo.key %>
+                <%= link_to favorite_foodplace_path(foodplace, scope: :favorite), data: { turbo_method: :patch } do %>
+                  <i class="fa-regular fa-heart icon-index "></i>
+                <% end %>
+                <%= link_to favorite_foodplace_path(foodplace, scope: :saved), data: { turbo_method: :patch } do %>
+                  <i class="fa-regular fa-bookmark icon-index "></i>
+                <% end %>
+                <%= link_to favorite_foodplace_path(foodplace, scope: :visited), data: { turbo_method: :patch } do %>
+                  <i class="fa-regular fa-circle-check icon-index "></i>
+                <% end %>
+              <% else %>
+                <img src="https://imgflip.com/s/meme/Grandma-Finds-The-Internet.jpg" />
               <% end %>
-              <br>
-              <%= link_to favorite_foodplace_path(foodplace, scope: :saved), data: { turbo_method: :patch } do %>
-                <i class="fa-regular fa-bookmark icon-index"></i>
-
+              <div class="rating d-flex">
+                <% i = 0  %>
+                <% while i < foodplace.google_rating.to_i.round %>
+                  <div class="circle"></div>
+                  <% i +=1 %>
+                <% end %>
+              </div>
+            </div>
+            <div class="card-info-wrapper">
+              <h4><%= foodplace.name %></h4>
+              <p><%= foodplace.address %></p>
+              <% if foodplace.opening_times.present? %>
+              <p><%= foodplace.opening_times %></p>
               <% end %>
-              <br>
-
-              <%= link_to favorite_foodplace_path(foodplace, scope: :visited), data: { turbo_method: :patch } do %>
-                <i class="fa-regular fa-circle-check icon-index"></i>
-
-              <% end %>
-
-
-            <% else %>
-              <img src="https://imgflip.com/s/meme/Grandma-Finds-The-Internet.jpg" />
-            <% end %>
-          </div>
-          <div class="card-info-wrapper">
-            <h4><%= foodplace.name %></h4>
-            <p><%= foodplace.address %></p>
-            <h4 class="rating"><%= foodplace.google_rating %></h4>
-            <br>
-            <p><%= foodplace.opening_times %></p>
-          </div>
+            </div>
+        </div>
         <% end %>
       </div>
     <% end %>
