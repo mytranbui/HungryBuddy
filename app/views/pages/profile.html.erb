@@ -60,7 +60,7 @@
   <div class="tab-content " id="pills-tabContent">
     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
       <div>
-        <% current_user.all_favorites.each do |f| %>
+        <% @favorites.each do |f| %>
           <%= link_to foodplace_path(f) do %>
             <div class="card-product border shadow rounded">
               <% if Foodplace.find(f.favoritable_id).photo.attached? %>
@@ -80,7 +80,7 @@
 
     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
       <div>
-        <% current_user.all_saves.each do |f| %>
+        <% @saves.each do |f| %>
           <%= link_to foodplace_path(f) do %>
             <div class="card-product border shadow rounded">
               <% if Foodplace.find(f.favoritable_id).photo.attached? %>
@@ -101,7 +101,7 @@
 
     <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
       <div>
-        <% current_user.all_visits.each do |f| %>
+        <% @visits.each do |f| %>
           <%= link_to foodplace_path(f) do %>
             <div class="card-product border shadow rounded">
               <% if Foodplace.find(f.favoritable_id).photo.attached? %>
