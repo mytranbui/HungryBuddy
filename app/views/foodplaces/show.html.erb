@@ -24,7 +24,7 @@
       </button> %>
       <div>
         <%= link_to favorite_foodplace_path(@foodplace, scope: :favorite), data: { turbo_method: :patch  } do %>
-          <i class="fa-regular fa-heart show-btn fa-3x my-2"  data-action="click->buttonchange#changeheart"></i>
+          <i class="fa-regular fa-heart show-btn fa-3x my-2"></i>
         <% end %>
       </div>
       <div>
@@ -33,7 +33,7 @@
         <% end %>
       </div>
       <div>
-        <%= link_to favorite_foodplace_path(@foodplace, scope: :visited), data: { turbo_method: :patch, action: "click->buttonchange#changeVisited"} do %>
+        <%= link_to favorite_foodplace_path(@foodplace, scope: :visited), data: { turbo_method: :patch} do %>
           <i class="fa-regular fa-circle-check show-btn fa-3x my-2 "></i>
         <% end %>
       </div>
