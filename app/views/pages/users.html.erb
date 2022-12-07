@@ -7,7 +7,7 @@
     %>
     <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
-  <h1 class="users-title">USERS</h1>
+  <h1 class="users-title">ALL FOODIES</h1>
   <% @users.each do |user| %>
     <% unless current_user == user %>
       <div class="new-card">
@@ -17,11 +17,14 @@
           </div>
           <h2 class="user-name-text"><%= user.nickname%></h2>
         <% end %>
-        <%= link_to follow_path(user: user) do %>
         <% if current_user.following?(user) %>
-          <i class="fa-solid fa-user-minus fa-2x"></i>
-        <% elsif current_user.stop_following(user) %>
-          <i class="fa-solid fa-user-plus fa-2x"></i>
+          <%= link_to unfollow_user_path(current_user, user: user), data: { turbo_method: :post } do %>
+            <i class="fa-solid fa-user-minus fa-2x"></i>
+          <% end %>
+        <% else %>
+          <%= link_to follow_user_path(current_user, user: user) , data: { turbo_method: :post } do %>
+
+            <i class="fa-solid fa-user-plus fa-2x"></i>
           <% end %>
         <% end %>
       </div>

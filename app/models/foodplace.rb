@@ -11,11 +11,7 @@ class Foodplace < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   def average_rating
-    all_ratings = self.reviews.pluck(:rating).compact
-    if all_ratings.count == 0
-      all_ratings = 0
-    else
-    (all_ratings.sum / all_ratings.count).round(1)
-    end
+    all_ratings = reviews.pluck(:rating).compact
+    (all_ratings.sum / all_ratings.count).round(1) unless all_ratings.count.zero?
   end
 end
