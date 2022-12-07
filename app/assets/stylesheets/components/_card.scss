@@ -88,6 +88,12 @@
   .fa-circle-check{
     padding-right: 40px;
   }
+}
+
+.circle-wrapper {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
 
   .circle {
     margin-right: 5px;
@@ -121,13 +127,8 @@
   }
 }
 
-.circle-wrapper {
-  position: absolute;
-  bottom:10px;
-  left: 10px;
-}
-
 .card-info-wrapper {
+  position: relative;
   padding: 8px;
 }
 .red {

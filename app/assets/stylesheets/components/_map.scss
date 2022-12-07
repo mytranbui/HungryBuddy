@@ -11,3 +11,15 @@
 .bg-color {
   background-color: #EFEFEF !important;
 }
+
+.mapboxgl-ctrl-top-right {
+  z-index: 0 !important;
+}
+
+.mapboxgl-ctrl-bottom-left {
+  z-index: 0 !important;
+}
+
+.mapboxgl-ctrl-bottom-right {
+  z-index: 0 !important;
+}

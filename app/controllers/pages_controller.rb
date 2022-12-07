@@ -7,11 +7,12 @@ class PagesController < ApplicationController
 
   def profile
     @user = User.find(params[:id])
-    @favorites = current_user.all_favorites
-    @saves = current_user.all_saves
-    @visits = current_user.all_visits
-    @followers = current_user.all_follows
-    @followings = current_user.all_following
+    @favorites = @user.all_favorites
+    @saves = @user.all_saves
+    @visits = @user.all_visits
+    @followers = @user.all_follows
+    @followings = @user.all_following
+
   end
 
   def users
