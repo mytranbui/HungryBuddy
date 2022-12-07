@@ -1,15 +1,7 @@
 <div class="footer">
   <div class="footer-links">
     <a href="/foodplaces"><i class="fa-solid fa-house fa-xl"></i></a>
-    <% if user_signed_in? %>
-      <%= link_to profile_path(current_user, foodplaces: "visited") do %>
-        <i class="fa-solid fa-rss fa-xl"></i>
-      <% end %>
-    <% else %>
-        <%= link_to new_user_session_path do %>
-        <i class="fa-solid fa-rss fa-xl"></i>
-      <% end %>
-    <% end %>
+    <a href="#"><i class="fa-solid fa-rss fa-xl"></i></a>
     <%= link_to map_path do %>
       <i class="fa-solid fa-map  fa-xl"></i>
     <% end %>
@@ -32,15 +24,13 @@
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
     <script>
       function openNav() {
-        console.log("open")
         document.getElementById("myNav").style.width = "100%";
       }
 
       function closeNav() {
-                console.log("close")
-
         document.getElementById("myNav").style.width = "0%";
       }
     </script>
   </div>
 </div>
+
