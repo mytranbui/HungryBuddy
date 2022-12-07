@@ -12,7 +12,6 @@ class PagesController < ApplicationController
     @visits = current_user.all_visits
     @followers = current_user.all_follows
     @followings = current_user.all_following
-
   end
 
   def users

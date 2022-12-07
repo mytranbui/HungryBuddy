@@ -8,15 +8,12 @@ export default class extends Controller {
   }
 
   changeHeart(event) {
-    event.preventDefault()
-    console.log("click click click")
     console.log(event.currentTarget.innerHTML)
     this.heartTarget.classList.toggle("fa-regular")
     this.heartTarget.classList.toggle("fa-solid" )
   }
 
-  changeBookmark(event) {
-    event.preventDefault()
+  changeBookmark() {
     console.log("bookmark")
     console.log(this.bookmarkTarget)
     this.bookmarkTarget.classList.toggle("fa-regular")
@@ -24,8 +21,6 @@ export default class extends Controller {
   }
 
   changeVisited(event) {
-    event.preventDefault()
-    console.log("click click click")
     console.log(event.currentTarget.innerHTML)
     this.visitedTarget.classList.toggle("fa-regular")
     this.visitedTarget.classList.toggle("fa-solid" )
