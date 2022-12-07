@@ -18,22 +18,22 @@
     </div>
     <!-- Button trigger modal -->
     <hr>
-    <div class="d-flex justify-content-between">
+    <div class="d-flex justify-content-between" data-controller="buttonchange">
       <%# <button type="button" class="btn  show-btn fa-3x my-2" data-bs-toggle="modal" data-bs-target="#review">
         <i class="fa-solid fa-star"></i>
       </button> %>
       <div>
-        <%= link_to favorite_foodplace_path(@foodplace, scope: :favorite), data: { turbo_method: :patch, controller: "buttonchange", action: "click->buttonchange#changeheart"  } do %>
-          <i class="fa-regular fa-heart show-btn fa-3x my-2 "></i>
+        <%= link_to favorite_foodplace_path(@foodplace, scope: :favorite), data: { turbo_method: :patch  } do %>
+          <i class="fa-regular fa-heart show-btn fa-3x my-2"  data-action="click->buttonchange#changeheart"></i>
         <% end %>
       </div>
       <div>
         <%= link_to favorite_foodplace_path(@foodplace, scope: :saved), data: { turbo_method: :patch } do %>
-           <i class="fa-regular fa-bookmark show-btn fa-3x my-2 "></i>
+          <i class="fa-regular fa-bookmark show-btn fa-3x my-2 "></i>
         <% end %>
       </div>
       <div>
-        <%= link_to favorite_foodplace_path(@foodplace, scope: :visited), data: { turbo_method: :patch } do %>
+        <%= link_to favorite_foodplace_path(@foodplace, scope: :visited), data: { turbo_method: :patch, action: "click->buttonchange#changeVisited"} do %>
           <i class="fa-regular fa-circle-check show-btn fa-3x my-2 "></i>
         <% end %>
       </div>
