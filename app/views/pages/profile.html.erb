@@ -76,6 +76,7 @@
         <% end %>
       </div>
     </div>
+    
     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
       <div>
         <% current_user.all_saves.each do |f| %>
@@ -96,7 +97,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
       <div>
         <% current_user.all_visits.each do |f| %>
