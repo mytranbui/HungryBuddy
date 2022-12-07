@@ -1,10 +1,10 @@
 <div class="footer">
   <div class="footer-links">
-    <a href="/foodplaces"><i class="fa-solid fa-utensils fa-xl"></i></i></a>
+    <a href="/foodplaces"><i class="fa-solid fa-utensils fa-xl <%= current_page?(foodplaces_path) ? 'footer-links-active' : '' %>"></i></a>
     <%= link_to map_path do %>
-      <i class="fa-solid fa-map  fa-xl"></i>
+      <i class="fa-solid fa-map fa-xl <%= current_page?(map_path) ? 'footer-links-active' : '' %>"></i>
     <% end %>
-    <a href="/users"><i class="fa-solid fa-user-group fa-xl"></i></a>
+    <a href="/users"><i class="fa-solid fa-user-group fa-xl <%= current_page?(users_path) ? 'footer-links-active' : ''%>"></i></a>
     <div id="myNav" class="overlay">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <div class="overlay-content">

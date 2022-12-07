@@ -35,6 +35,13 @@
               <% else %>
                 <img src="https://imgflip.com/s/meme/Grandma-Finds-The-Internet.jpg" />
               <% end %>
+            </div>
+            <div class="card-info-wrapper">
+              <h4><%= foodplace.name %></h4>
+              <p><%= foodplace.address %></p>
+              <% if foodplace.opening_times.present? %>
+              <p><%= foodplace.opening_times %></p>
+              <% end %>
               <div class="d-flex circle-wrapper">
                 <% x = 3.1 %>
                 <% ((((x * 2.0).round / 2.0)) - ((x * 2.0).round / 2.0) % 1).to_i.times do  %>
@@ -54,13 +61,6 @@
                   <div class="circle"></div>
                 <% end %>
               </div>
-            </div>
-            <div class="card-info-wrapper">
-              <h4><%= foodplace.name %></h4>
-              <p><%= foodplace.address %></p>
-              <% if foodplace.opening_times.present? %>
-              <p><%= foodplace.opening_times %></p>
-              <% end %>
             </div>
         </div>
         <% end %>
