@@ -23,18 +23,18 @@
         <i class="fa-solid fa-star"></i>
       </button> %>
       <div>
-        <%= link_to favorite_foodplace_path(@foodplace, scope: :favorite), data: { turbo_method: :patch  } do %>
-          <i class="fa-regular fa-heart show-btn fa-3x my-2"></i>
+        <%= link_to favorite_foodplace_path(@foodplace, scope: :favorite), data: { turbo_method: :patch , action: "click->buttonchange#changeHeart" } do %>
+          <i data-buttonchange-target="heart" class="fa-regular fa-heart show-btn fa-3x my-2"></i>
         <% end %>
       </div>
       <div>
-        <%= link_to favorite_foodplace_path(@foodplace, scope: :saved), data: { turbo_method: :patch } do %>
-          <i class="fa-regular fa-bookmark show-btn fa-3x my-2 "></i>
+        <%= link_to favorite_foodplace_path(@foodplace, scope: :saved), data: { turbo_method: :patch, action: "click->buttonchange#changeBookmark" } do %>
+          <i data-buttonchange-target="bookmark" class="fa-regular fa-bookmark show-btn fa-3x my-2"></i>
         <% end %>
       </div>
       <div>
-        <%= link_to favorite_foodplace_path(@foodplace, scope: :visited), data: { turbo_method: :patch} do %>
-          <i class="fa-regular fa-circle-check show-btn fa-3x my-2 "></i>
+        <%= link_to favorite_foodplace_path(@foodplace, scope: :visited), data: { turbo_method: :patch, action: "click->buttonchange#changeVisited"} do %>
+          <i data-buttonchange-target="visited" class="fa-regular fa-circle-check show-btn fa-3x my-2 "></i>
         <% end %>
       </div>
     </div>
@@ -92,7 +92,7 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                  <h5 class="modal-title" id="exampleModalLabel">Please add a review</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
