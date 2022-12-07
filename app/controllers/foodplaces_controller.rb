@@ -46,6 +46,14 @@ class FoodplacesController < ApplicationController
     current_user.favorite(@foodplace, scope: params[:scope])
   end
 
+  # def follow
+  #   current_user.favorite(@foodplace, scope: params[:scope])
+  # end
+
+  # def bookmark
+  #   current_user.favorite(@foodplace, scope: params[:scope])
+  # end
+
   private
 
   def set_foodplace

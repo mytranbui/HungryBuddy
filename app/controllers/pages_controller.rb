@@ -10,6 +10,9 @@ class PagesController < ApplicationController
     @favorites = current_user.all_favorites
     @saves = current_user.all_saves
     @visits = current_user.all_visits
+    @followers = current_user.all_follows
+    @followings = current_user.all_following
+
   end
 
   def users
