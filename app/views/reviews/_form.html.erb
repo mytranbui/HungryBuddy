@@ -4,7 +4,6 @@
     insert_in_list_target: "form",
     action: "submit->insert-in-list#send"
   }) do |f| %>
-    <%= f.input :date %>
     <%= f.input :rating, collection: (1..5).to_a, label: "Overall rating",
     input_html: {data: {controller: "star-rating"}} %>
     <%= f.input :cleanliness, collection: (1..5).to_a, label: "Cleanliness:",
