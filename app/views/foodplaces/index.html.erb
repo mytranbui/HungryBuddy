@@ -36,31 +36,31 @@
                 <img src="https://imgflip.com/s/meme/Grandma-Finds-The-Internet.jpg" />
               <% end %>
             </div>
+            <div class="d-flex circle-wrapper mt-2 mb-1">
+              <% x = foodplace.google_rating %>
+              <% ((((x * 2.0).round / 2.0)) - ((x * 2.0).round / 2.0) % 1).to_i.times do  %>
+                <div class="circle-full"></div>
+              <% end %>
+              <% empty_circle = 0 %>
+              <%if((((x * 2.0).round / 2.0) % 1) < 0.5) %>
+              <% half_circle = 0 %>
+              <% else %>
+              <% half_circle = 1 %>
+              <% end %>
+              <% half_circle.times do %>
+                <div class="circle-half"></div>
+                <div class="circle-empty"></div>
+              <% end %>
+              <% (5 - (((x * 2.0).round / 2.0)) - ((x * 2.0).round / 2.0) % 1).to_i.times do %>
+                <div class="circle"></div>
+              <% end %>
+            </div>
             <div class="card-info-wrapper">
               <h4><%= foodplace.name %></h4>
               <p><%= foodplace.address %></p>
               <% if foodplace.opening_times.present? %>
               <p><%= foodplace.opening_times %></p>
               <% end %>
-              <div class="d-flex circle-wrapper">
-                <% x = foodplace.google_rating %>
-                <% ((((x * 2.0).round / 2.0)) - ((x * 2.0).round / 2.0) % 1).to_i.times do  %>
-                  <div class="circle-full"></div>
-                <% end %>
-                <% empty_circle = 0 %>
-                <%if((((x * 2.0).round / 2.0) % 1) < 0.5) %>
-                <% half_circle = 0 %>
-                <% else %>
-                <% half_circle = 1 %>
-                <% end %>
-                <% half_circle.times do %>
-                  <div class="circle-half"></div>
-                  <div class="circle-empty"></div>
-                <% end %>
-                <% (5 - (((x * 2.0).round / 2.0)) - ((x * 2.0).round / 2.0) % 1).to_i.times do %>
-                  <div class="circle"></div>
-                <% end %>
-              </div>
             </div>
         </div>
         <% end %>
