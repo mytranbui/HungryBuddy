@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="insert-in-list"
 export default class extends Controller {
-  static targets = ["items", "form", "close"]
+  static targets = ["items", "form", "close", "status"]
   static values = { position: String }
 
   connect() {
@@ -23,8 +23,12 @@ export default class extends Controller {
         if (data.inserted_item) {
           this.itemsTarget.insertAdjacentHTML(this.positionValue, data.inserted_item)
         }
+        if (data.status) {
+          this.statusTarget.outerHTML = data.status
+        }
         this.closeTarget.click()
         this.formTarget.outerHTML = data.form
+        this.itemsTarget.innerHTML
       })
   }
 
