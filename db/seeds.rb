@@ -84,10 +84,10 @@ users = [
     password: "123456",
     photo_url: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1664738022/hde9mngzclpbctqcws8x.jpg",
     diet: "normal",
-    likes: "Chinese food",
-    dislikes: "Ginger",
-    allergies: "None",
-    bio: "I like to go to the restaurant with friends."
+    likes: "Evrything with meat",
+    dislikes: "Mashrooms",
+    allergies: "Bad food",
+    bio: "Im learning how to code at Le Wagon."
   },
   {
     first_name: "Bishwajit",
@@ -101,10 +101,141 @@ users = [
     dislikes: "tomato",
     allergies: "None",
     bio: "I like Asian dishes."
+  },
+  {
+    first_name: "Ulf",
+    last_name: "Hausmann",
+    nickname: "Ulle",
+    email: "Ulle@gmail.com",
+    password: "123456",
+    photo_url: "https://avatars.githubusercontent.com/u/113314565?v=4",
+    diet: "none",
+    likes: "Sweets",
+    dislikes: "salad",
+    allergies: "None",
+    bio: "I like all the unhealty stuff."
+  },
+  {
+    first_name: "Hans",
+    last_name: "Mausmann",
+    nickname: "Hansi",
+    email: "Mausmann@gmail.com",
+    password: "123456",
+    photo_url: "https://avatars.githubusercontent.com/u/113314565?v=4",
+    diet: "none",
+    likes: "Sweets",
+    dislikes: "Potatos",
+    allergies: "None",
+    bio: "I like trains."
+  },
+  {
+    first_name: "Phill",
+    last_name: "Winkelmann",
+    nickname: "Philly",
+    email: "Winkel@gmail.com",
+    password: "123456",
+    photo_url: "https://avatars.githubusercontent.com/u/113314565?v=4",
+    diet: "Vegan",
+    likes: "Sweets",
+    dislikes: "Meat",
+    allergies: "None",
+    bio: "I like animals."
+  },
+  {
+    first_name: "Sebastian",
+    last_name: "Schwarz",
+    nickname: "Sebi",
+    email: "Sebi@gmail.com",
+    password: "123456",
+    photo_url: "https://avatars.githubusercontent.com/u/113314565?v=4",
+    diet: "None",
+    likes: "Soups",
+    dislikes: "Fish",
+    allergies: "None",
+    bio: "I like to play football."
+  },
+  {
+    first_name: "Raphael",
+    last_name: "Mazuk",
+    nickname: "Raff",
+    email: "Mazuk@gmail.com",
+    password: "123456",
+    photo_url: "https://avatars.githubusercontent.com/u/113314565?v=4",
+    diet: "None",
+    likes: "Evrything",
+    dislikes: "Brownies",
+    allergies: "None",
+    bio: "I love to play basketball."
+  },
+  {
+    first_name: "Anna",
+    last_name: "Malo",
+    nickname: "Ann",
+    email: "MMalo@gmail.com",
+    password: "123456",
+    photo_url: "https://avatars.githubusercontent.com/u/113314565?v=4",
+    diet: "None",
+    likes: "Fresh bread",
+    dislikes: "Fastfood",
+    allergies: "None so far",
+    bio: "Im a single mom."
+  },
+  {
+    first_name: "Lina",
+    last_name: "Weiß",
+    nickname: "Lin",
+    email: "LinaWo@gmail.com",
+    password: "123456",
+    photo_url: "https://avatars.githubusercontent.com/u/113314565?v=4",
+    diet: "None",
+    likes: "Fresh soups",
+    dislikes: "Tuna",
+    allergies: "Oranges",
+    bio: "I like to go out with my dog."
+  },
+  {
+    first_name: "Arnold",
+    last_name: "Strong",
+    nickname: "Arni",
+    email: "ArniStrong@gmail.com",
+    password: "123456",
+    photo_url: "https://avatars.githubusercontent.com/u/113314565?v=4",
+    diet: "None",
+    likes: "All healthy",
+    dislikes: "Chcken",
+    allergies: "None",
+    bio: "I`m training all day."
+  },
+  {
+    first_name: "Arnold",
+    last_name: "Strong",
+    nickname: "Arni",
+    email: "ArniStrong@gmail.com",
+    password: "123456",
+    photo_url: "https://avatars.githubusercontent.com/u/113314565?v=4",
+    diet: "None",
+    likes: "All healthy",
+    dislikes: "Chcken",
+    allergies: "None",
+    bio: "I`m training all day."
+  },
+  {
+    first_name: "Maxim",
+    last_name: "Power",
+    nickname: "Max",
+    email: "MaxPower@gmail.com",
+    password: "123456",
+    photo_url: "https://avatars.githubusercontent.com/u/113314565?v=4",
+    diet: "None",
+    likes: "Nothing speciall",
+    dislikes: "Corn",
+    allergies: "Corn",
+    bio: "Ilike to cook all day."
   }
 ]
 
 users.each do |user_hash|
+  p user_hash
   user = User.create(
     first_name: user_hash[:first_name],
     last_name: user_hash[:last_name],
