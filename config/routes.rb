@@ -20,9 +20,10 @@ Rails.application.routes.draw do
   resources :lists do
     resources :bookmarks, only: [:new, :create]
   end
+
   resources :bookmarks, only: [:destroy]
   # not sure about the routes
   get "follow", to: "followers#follow"
-  post '/users/:id/follow', to: "users#follow", as: "follow_user"
-  post '/users/:id/unfollow', to: "users#unfollow", as: "unfollow_user"
+  post '/users/:id/follow', to: "followers#follow", as: "follow_user"
+  post '/users/:id/unfollow', to: "followers#unfollow", as: "unfollow_user"
 end
