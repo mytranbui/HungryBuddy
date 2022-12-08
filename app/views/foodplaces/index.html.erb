@@ -43,7 +43,7 @@
               <p><%= foodplace.opening_times %></p>
               <% end %>
               <div class="d-flex circle-wrapper">
-                <% x = 3.4 %>
+                <% x = foodplace.google_rating %>
                 <% ((((x * 2.0).round / 2.0)) - ((x * 2.0).round / 2.0) % 1).to_i.times do  %>
                   <div class="circle-full"></div>
                 <% end %>

@@ -98,7 +98,7 @@
       <div>
         <% @visits.each do |f| %>
           <%= link_to foodplace_path (f.favoritable_id) do %>
-             <div class="card-product border shadow rounded">
+            <div class="card-product border shadow rounded">
               <% if Foodplace.find(f.favoritable_id).photo.attached? %>
                 <%= cl_image_tag Foodplace.find(f.favoritable_id).photo.key %>
               <% else %>
