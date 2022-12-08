@@ -1,0 +1,8 @@
+<div class="ratings-card" data-insert-in-list-target="status">
+  <% if foodplace.average_rating.zero?  %>
+    <h2>No user rating so far</h2>
+  <% else %>
+    <h2>User rating <%= foodplace.average_rating %></h2>
+  <% end %>
+  <h4>Google rating <%= foodplace.google_rating %></h4>
+</div>

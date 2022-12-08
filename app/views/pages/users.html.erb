@@ -15,7 +15,7 @@
           <div class="avatar-large pe-3">
             <%= cl_image_tag user.photo.key if user.photo.attached?%>
           </div>
-          <h2 class="user-name-text"><%= user.nickname%></h2>
+          <h2 class="user-name-text"><%= user.first_name%></h2>
         <% end %>
         <% if current_user.following?(user) %>
           <%= link_to unfollow_user_path(current_user, user: user), data: { turbo_method: :post } do %>

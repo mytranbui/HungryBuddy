@@ -11,6 +11,8 @@ class User < ApplicationRecord
   has_many :lists, dependent: :destroy
   has_many :reviews
   has_one_attached :photo
+
+  validates :nickname, uniqueness: { case_sensitive: false }
   # has_many :friendships ??
 
   def all_saves

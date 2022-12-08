@@ -1,7 +1,21 @@
-<div class="container review-card my-2">
-  <h4><%= current_user.nickname %></h4>
-  <h3><%= review.highlight %></h3>
-  <h4><%= review.comment %></h4>
-  <p><%= review.created_at.strftime("%B %d, %Y") %></p>
-  <hr>
+<div class="container review-card" data>
+  <div class="stars-review">
+    <% review.rating.to_i.times do %>
+      <i class="fa-solid fa-star my-3 fa-2x"></i>
+    <% end %>
+    <% (5 - review.rating.to_i).times do %>
+      <i class="fa-regular fa-star my-3 fa-2x"></i>
+    <% end %>
+    <% if review.highlight.present? %>
+      <p><strong><%= review.highlight %></strong></p>
+    <% end %>
+    <% if review.comment.present? %>
+
+      <p><%= review.comment %></p>
+    <% end %>
+    <div class="d-flex my-2 justify-content-between">
+      <p class="fw-lighter"><%= current_user.nickname %></p>
+      <p class="fst-italic"><%= review.created_at.strftime("%B %d, %Y") %></p>
+    </div>
+  </div>
 </div>
