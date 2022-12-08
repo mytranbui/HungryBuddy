@@ -15,7 +15,7 @@
           <div class="avatar-large pe-3">
             <%= cl_image_tag user.photo.key if user.photo.attached?%>
           </div>
-          <h2 class="user-name-text"><%= user.nickname%></h2>
+          <h2 class="user-name-text"><%= user.first_name%></h2>
         <% end %>
         <%= link_to follow_path(user: user) do %>
         <% if current_user.following?(user) %>
