@@ -83,11 +83,11 @@ users = [
     email: "alexandr@iampolskaia.com",
     password: "123456",
     photo_url: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1664738022/hde9mngzclpbctqcws8x.jpg",
-    diet: "normal",
-    likes: "Chinese food",
-    dislikes: "Ginger",
-    allergies: "None",
-    bio: "I like to go to the restaurant with friends."
+    diet: "No",
+    likes: "Evrything with meat",
+    dislikes: "Mashrooms",
+    allergies: "Bad food",
+    bio: "Im learning how to code at Le Wagon."
   },
   {
     first_name: "Bishwajit",
@@ -101,6 +101,19 @@ users = [
     dislikes: "tomato",
     allergies: "None",
     bio: "I like Asian dishes."
+  },
+  {
+    first_name: "Ulf",
+    last_name: "Hansen",
+    nickname: "Ulle",
+    email: "Ulfhan@karmaker.com",
+    password: "123456",
+    photo_url: "https://unsplash.com/photos/yiO1893a1j4",
+    diet: "no",
+    likes: "Sweets",
+    dislikes: "Fish",
+    allergies: "Salad",
+    bio: "I like to work out."
   }
 ]
 
