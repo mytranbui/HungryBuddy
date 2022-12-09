@@ -39,23 +39,23 @@
 <%# ...........................................Tab Bar................................................... %>
 
 <div class="mx-4 my-2">
-<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+ <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalToggleLabel">Following</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-    <%= link_to users_path(@user_session) do %>
-   <div class="container mt-3 new-card", style="color: white">
-        <%@followers.each do |follower| %>
+<div class="modal-body">
+      <%@followers.each do |follower| %>
+    <%= link_to profile_path(follower.followable_id) do %>
+    <div class="container mt-3 new-card">
             <% user = User.find(follower.followable_id) %>
-            <%= user.first_name %>
+            <p style="color: white"><%= user.first_name %></p>
         <% end %>
     </div>
   <% end %>
-      </div>
+</div>
       <div class="modal-footer">
         <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">Open followers</button>
       </div>
@@ -67,17 +67,20 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalToggleLabel2">Followers</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+        </button>
       </div>
       <div class="modal-body">
-    <%= link_to users_path(@user_session) do %>
+
+          <%@followers.each do |follower| %>
+    <%= link_to profile_path(follower.followable_id) do %>
     <div class="container mt-3 new-card", style="color: white">
-        <%@followers.each do |follower| %>
             <% user = User.find(follower.followable_id) %>
-            <%= user.first_name %>
+            <p style="color: white"><%= user.first_name %></p>
         <% end %>
     </div>
   <% end %>
+
       </div>
       <div class="modal-footer">
         <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal">Back to followings</button>
